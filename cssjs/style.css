@@ -1,0 +1,185 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+header {
+    background-color: #f2f2f2;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
+    box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
+    position: fixed;
+}
+
+#container {
+    padding-top: 100px;
+    width: 60%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+section {
+    padding: 1rem 6rem;
+}
+
+#search-form {
+    width: 60%;
+    margin: 2rem auto;
+}
+#search-form > label {
+    font-size: 1.5rem;
+}
+
+#bar-search {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+#btn-search {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    padding: 10px 15px;
+    width: 30%;
+}
+
+#btn-search:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#btn-search:active {
+    background-color: #ccc;
+}
+
+.produit {
+    display: flex;
+}
+
+.produit > img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+#description {
+    margin-left: 1rem;
+}
+
+#sec-scores {
+    display: flex;
+    justify-content: center;
+}
+.score {
+    width: 200px;
+    height: 120px;
+    background-color: black;
+    margin: 0.5rem;
+}
+
+#additifs {
+    display: flex;
+}
+
+.additif {
+    background-color: #ddd;
+    margin-right: 1rem;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#sec-nutrition > table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+}
+
+#sec-nutrition > table > thead > tr > th {
+    padding: 8px;
+    text-align: left;
+    background-color: #04aa6d;
+    color: white;
+}
+
+#sec-nutrition > table > tbody > tr > td {
+    padding: 8px;
+}
+
+#sec-nutrition > table > tbody > tr > td:first-child {
+    font-weight: bold;
+}
+
+#sec-nutrition > table > tbody > tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#sec-nutrition > table > tbody > tr:hover {
+    background-color: #ddd;
+}
+
+#sec-nutrition > table > caption {
+    visibility: hidden;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: crimson;
+    color: white;
+}
+
+footer > p {
+    margin: 4rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 576px) {
+    #container {
+        width: 100%;
+    }
+
+    section {
+        padding: 1rem 1rem;
+    }
+
+    #search-form {
+        width: 100%;
+    }
+
+    #sec-nutrition > table {
+        width: 100%;
+    }
+
+    #additifs {
+        flex-direction: column;
+    }
+
+    .additif {
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-bottom: 0.5rem;
+    }
+
+    footer > p {
+        margin: 3rem 1rem;
+    }
+}

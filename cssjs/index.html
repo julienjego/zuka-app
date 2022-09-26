@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zuka - HTML / CSS / JS</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <header><h1>&#x1F349;Zuka, le yuka du futur</h1></header>
+        <div id="container">
+            <section>
+                <form id="search-form">
+                    <label for="bar-search">Rechercher un produit</label><br />
+                    <input
+                        type="search"
+                        name="bar-search"
+                        id="bar-search"
+                        placeholder="Par ex : 87654449887"
+                    />
+                    <input type="button" id="btn-search" value="Rechercher" />
+                </form>
+            </section>
+            <section id="sec-produit">
+                <h2>Le produit</h2>
+                <div class="produit">
+                    <img
+                        src="../img/test.jpg"
+                        alt="photo-produit"
+                        id="ig-produit"
+                    />
+                    <div id="description">
+                        <p id="produit-nom"><strong>Nom</strong></p>
+                        <p>Quantité : <span id="produit-quantite"></span></p>
+                        <p>Marque : <span id="produit-marque"></span></p>
+                        <p>Catégorie : <span id="produit-categorie"></span></p>
+                    </div>
+                </div>
+            </section>
+            <section id="sec-scores">
+                <div id="nutriscore" class="score"></div>
+                <div id="novascore" class="score"></div>
+                <div id="ecoscore" class="score"></div>
+            </section>
+
+            <section id="sec-ingredients">
+                <h2>Les ingrédients</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Sed optio perspiciatis ullam quisquam? Quod similique itaque
+                    suscipit, harum sapiente, laborum aliquam voluptas iste
+                    nemo, cumque illo numquam optio saepe distinctio.
+                </p>
+                <h4>Additifs</h4>
+
+                <div id="additifs">
+                    <div class="additif">
+                        &#x25CF; E503i - Carbonate d'ammonium
+                    </div>
+                    <div class="additif">
+                        &#x25CF; E500ii - Carbonate acide de sodium
+                    </div>
+                    <div class="additif">&#x25CF; E322i - Lécithine</div>
+                </div>
+
+                <h4>Analyse des ingrédients</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                    nesciunt obcaecati quis accusantium harum! Excepturi officia
+                    ipsam aliquid sequi molestias ipsum, voluptate, autem ab
+                    ratione sed obcaecati, dolorem aut illum!
+                </p>
+            </section>
+            <section id="sec-nutrition">
+                <h2>Repères nutritionnels</h2>
+                <table>
+                    <caption>
+                        Repères nutritionnels
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Information</th>
+                            <th>Pour 100g</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matières grasses</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Acides gras saturés</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sucre</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sel</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <footer>
+            <p>Zuka, le yuka du futur</p>
+            <p>Conditions d'utilisation et copyright</p>
+            <p>Réseaux sociaux</p>
+        </footer>
+    </body>
+</html>
