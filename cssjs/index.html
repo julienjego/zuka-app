@@ -16,54 +16,89 @@
                         type="search"
                         name="bar-search"
                         id="bar-search"
-                        placeholder="Par ex : 87654449887"
+                        placeholder="Par ex : 7622210449283"
                     />
                     <input type="button" id="btn-search" value="Rechercher" />
                 </form>
             </section>
-            <section id="sec-produit">
-                <h2>Le produit</h2>
-                <div class="produit">
-                    <img
-                        src="../img/test.jpg"
-                        alt="photo-produit"
-                        id="ig-produit"
-                    />
-                    <div id="description">
-                        <p id="produit-nom"><strong>Nom</strong></p>
-                        <p>Quantité : <span id="produit-quantite"></span></p>
-                        <p>Marque : <span id="produit-marque"></span></p>
-                        <p>Catégorie : <span id="produit-categorie"></span></p>
+
+            <section id="fiche-produit">
+                <section id="sec-produit">
+                    <h2>Le produit</h2>
+                    <div class="produit">
+                        <img
+                            src="../img/placeholder.png"
+                            alt="photo-produit"
+                            id="produit-img"
+                        />
+                        <div id="description">
+                            <p id="produit-nom">Nom</p>
+                            <p>
+                                Quantité : <span id="produit-quantite"></span>
+                            </p>
+                            <p>Marque(s) : <span id="produit-marque"></span></p>
+                            <p>
+                                Catégorie : <span id="produit-categorie"></span>
+                            </p>
+                            <p><span id="bio-label">Produit Bio</span></p>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section id="sec-scores">
-                <div id="nutriscore" class="score"></div>
-                <div id="novascore" class="score"></div>
-                <div id="ecoscore" class="score"></div>
+                </section>
+                <section id="sec-scores">
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/nutriscore"
+                            target="_blank"
+                            ><img
+                                src="../img/nutriscore-ph.png"
+                                alt="nutriscore"
+                                id="nutriscore"
+                        /></a>
+                    </div>
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/nova"
+                            target="_blank"
+                        >
+                            <img
+                                src="../img/nova-ph.png"
+                                alt="novascore"
+                                id="novascore"
+                            />
+                        </a>
+                    </div>
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/eco-score-l-impact-environnemental-des-produits-alimentaires"
+                            target="_blank"
+                        >
+                            <img
+                                src="../img/ecoscore-ph.png"
+                                alt="ecoscore"
+                                id="ecoscore"
+                            />
+                        </a>
+                    </div>
+                </section>
             </section>
 
             <section id="sec-ingredients">
                 <h2>Les ingrédients</h2>
-                <p>
+                <p id="list-ingredients">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Sed optio perspiciatis ullam quisquam? Quod similique itaque
                     suscipit, harum sapiente, laborum aliquam voluptas iste
                     nemo, cumque illo numquam optio saepe distinctio.
                 </p>
-                <h4>Additifs</h4>
 
-                <div id="additifs">
-                    <div class="additif">
-                        &#x25CF; E503i - Carbonate d'ammonium
-                    </div>
-                    <div class="additif">
-                        &#x25CF; E500ii - Carbonate acide de sodium
-                    </div>
-                    <div class="additif">&#x25CF; E322i - Lécithine</div>
-                </div>
+                <p>
+                    <strong>Allergènes :</strong> <span id="allergens"></span>
+                </p>
 
-                <h4>Analyse des ingrédients</h4>
+                <h3>Additifs</h3>
+                <div id="additifs"></div>
+
+                <h3>Analyse des ingrédients</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
                     nesciunt obcaecati quis accusantium harum! Excepturi officia
@@ -85,20 +120,24 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td>Calories</td>
+                            <td id="energy"></td>
+                        </tr>
+                        <tr>
                             <td>Matières grasses</td>
-                            <td></td>
+                            <td id="fat"></td>
                         </tr>
                         <tr>
                             <td>Acides gras saturés</td>
-                            <td></td>
+                            <td id="saturated-fat"></td>
                         </tr>
                         <tr>
                             <td>Sucre</td>
-                            <td></td>
+                            <td id="sugar"></td>
                         </tr>
                         <tr>
                             <td>Sel</td>
-                            <td></td>
+                            <td id="salt"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -109,5 +148,6 @@
             <p>Conditions d'utilisation et copyright</p>
             <p>Réseaux sociaux</p>
         </footer>
+        <script src="app.js"></script>
     </body>
 </html>
