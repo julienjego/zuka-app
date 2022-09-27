@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Zuka - HTML / CSS / JS</title>
         <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="icon" type="image/png" href="../img/icon.png" />
     </head>
     <body>
         <header><h1>&#x1F349;Zuka, le yuka du futur</h1></header>
@@ -40,7 +41,9 @@
                             <p>
                                 Catégorie : <span id="produit-categorie"></span>
                             </p>
-                            <p><span id="bio-label">Produit Bio</span></p>
+                            <p>
+                                <span id="bio-label">&#x25CF; Produit Bio</span>
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -49,8 +52,9 @@
                         <a
                             href="https://fr.openfoodfacts.org/nutriscore"
                             target="_blank"
+                            rel="noopener"
                             ><img
-                                src="../img/nutriscore-ph.png"
+                                src="../img/nutriscore-na.svg"
                                 alt="nutriscore"
                                 id="nutriscore"
                         /></a>
@@ -59,9 +63,10 @@
                         <a
                             href="https://fr.openfoodfacts.org/nova"
                             target="_blank"
+                            rel="noopener"
                         >
                             <img
-                                src="../img/nova-ph.png"
+                                src="../img/nova-na.svg"
                                 alt="novascore"
                                 id="novascore"
                             />
@@ -71,9 +76,10 @@
                         <a
                             href="https://fr.openfoodfacts.org/eco-score-l-impact-environnemental-des-produits-alimentaires"
                             target="_blank"
+                            rel="noopener"
                         >
                             <img
-                                src="../img/ecoscore-ph.png"
+                                src="../img/ecoscore-na.svg"
                                 alt="ecoscore"
                                 id="ecoscore"
                             />
@@ -105,6 +111,52 @@
                     ipsam aliquid sequi molestias ipsum, voluptate, autem ab
                     ratione sed obcaecati, dolorem aut illum!
                 </p>
+                <div id="analysis-labels">
+                    <!-- <div id="palm-oil-label" class="red-ingredients-label">
+                        &#x25CF; Huile de palme
+                    </div>
+
+                    <div id="no-vegan-label" class="red-ingredients-label">
+                        &#x25CF; Non vegan
+                    </div>
+
+                    <div id="no-vegetarian-label" class="red-ingredients-label">
+                        &#x25CF; Non végétarien
+                    </div> -->
+
+                    <!-- <div id="no-palm-oil-label" class="green-ingredients-label">
+                        &#x25CF; Sans huile de palme
+                    </div>
+
+                    <div id="vegan-label" class="green-ingredients-label">
+                        &#x25CF; Produit vegan
+                    </div>
+
+                    <div id="vegetarian-label" class="green-ingredients-label">
+                        &#x25CF; Produit végétarien
+                    </div> -->
+
+                    <!-- <div
+                        id="unknown-palm-oil-label"
+                        class="unknown-ingredients-label"
+                    >
+                        &#x25CF; Présence huile de palme inconnue
+                    </div>
+
+                    <div
+                        id="unknown-vegan-label"
+                        class="unknown-ingredients-label"
+                    >
+                        &#x25CF; Caractère vegan inconnu
+                    </div>
+
+                    <div
+                        id="unknown-vegetarian-label"
+                        class="unknown-ingredients-label"
+                    >
+                        &#x25CF; Caractère végétarien inconnu
+                    </div> -->
+                </div>
             </section>
             <section id="sec-nutrition">
                 <h2>Repères nutritionnels</h2>

@@ -98,12 +98,44 @@ section {
     visibility: hidden;
 }
 
+#analysis-labels {
+    display: flex;
+}
+
+.red-ingredients-label {
+    background-color: crimson;
+    color: white;
+    padding: 10px 25px;
+    margin-right: 1rem;
+    border-radius: 25px;
+}
+
+.green-ingredients-label {
+    background-color: #04aa6d;
+    color: white;
+    padding: 10px 25px;
+    margin-right: 1rem;
+    border-radius: 25px;
+}
+
+.unknown-ingredients-label {
+    background-color: #ddd;
+    padding: 10px 25px;
+    margin-right: 1rem;
+    border-radius: 25px;
+}
+
 #sec-scores {
     display: flex;
     justify-content: space-between;
 }
+
+.score {
+    margin-right: 0.2rem;
+}
 .score > a > img {
-    height: 100px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #additifs {
@@ -114,7 +146,7 @@ section {
     background-color: #ddd;
     margin-right: 1rem;
     padding: 10px;
-    border: 1px solid crimson;
+    border: 2px solid crimson;
     border-radius: 25px;
 }
 
@@ -187,11 +219,11 @@ footer > p {
         width: 100%;
     }
 
-    #additifs {
+    #analysis-labels {
         flex-direction: column;
     }
 
-    .additif {
+    #analysis-labels > div {
         width: -moz-fit-content;
         width: fit-content;
         margin-bottom: 0.5rem;
@@ -219,11 +251,11 @@ footer > p {
         width: 100%;
     }
 
-    #additifs {
+    #analysis-labels {
         flex-direction: column;
     }
 
-    .additif {
+    #analysis-labels > div {
         width: -moz-fit-content;
         width: fit-content;
         margin-bottom: 0.5rem;
@@ -249,16 +281,6 @@ footer > p {
 
     #sec-nutrition > table {
         width: 100%;
-    }
-
-    #additifs {
-        flex-direction: column;
-    }
-
-    .additif {
-        width: -moz-fit-content;
-        width: fit-content;
-        margin-bottom: 0.5rem;
     }
 
     footer > p {
