@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Une petite webapp pour savoir koikonbouf."
+        />
         <title>Zuka - HTML / CSS / JS</title>
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link rel="icon" type="image/png" href="../img/icon.png" />
@@ -17,29 +21,47 @@
                         type="search"
                         name="bar-search"
                         id="bar-search"
-                        placeholder="Par ex : 7622210449283"
+                        placeholder="Par ex : 7622210713780"
+                        required
                     />
-                    <input type="button" id="btn-search" value="Rechercher" />
+                    <input
+                        type="button"
+                        id="btn-search"
+                        class="buttons"
+                        value="Rechercher"
+                    />
+                    <input
+                        type="button"
+                        id="btn-random-search"
+                        class="buttons"
+                        value="Un produit au hasard"
+                    />
                 </form>
+                <div id="alert-box">
+                    <p>
+                        Hum... Il semblerait que ce produit ne soit pas reconnu,
+                        réessayez avec un autre code !
+                    </p>
+                </div>
             </section>
 
-            <section id="fiche-produit">
-                <section id="sec-produit">
+            <section id="product-card">
+                <section id="sec-product">
                     <h2>Le produit</h2>
-                    <div class="produit">
+                    <div class="product">
                         <img
                             src="../img/placeholder.png"
                             alt="photo-produit"
-                            id="produit-img"
+                            id="product-img"
                         />
                         <div id="description">
-                            <p id="produit-nom">Nom</p>
+                            <p id="product-name">Nom</p>
                             <p>
-                                Quantité : <span id="produit-quantite"></span>
+                                Quantité : <span id="product-quantity"></span>
                             </p>
-                            <p>Marque(s) : <span id="produit-marque"></span></p>
+                            <p>Marque(s) : <span id="product-brand"></span></p>
                             <p>
-                                Catégorie : <span id="produit-categorie"></span>
+                                Catégorie : <span id="product-category"></span>
                             </p>
                             <p>
                                 <span id="bio-label">&#x25CF; Produit Bio</span>
@@ -90,73 +112,17 @@
 
             <section id="sec-ingredients">
                 <h2>Les ingrédients</h2>
-                <p id="list-ingredients">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Sed optio perspiciatis ullam quisquam? Quod similique itaque
-                    suscipit, harum sapiente, laborum aliquam voluptas iste
-                    nemo, cumque illo numquam optio saepe distinctio.
-                </p>
+                <p id="list-ingredients"></p>
 
                 <p>
                     <strong>Allergènes :</strong> <span id="allergens"></span>
                 </p>
 
                 <h3>Additifs</h3>
-                <div id="additifs"></div>
+                <div id="additives"></div>
 
                 <h3>Analyse des ingrédients</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                    nesciunt obcaecati quis accusantium harum! Excepturi officia
-                    ipsam aliquid sequi molestias ipsum, voluptate, autem ab
-                    ratione sed obcaecati, dolorem aut illum!
-                </p>
-                <div id="analysis-labels">
-                    <!-- <div id="palm-oil-label" class="red-ingredients-label">
-                        &#x25CF; Huile de palme
-                    </div>
-
-                    <div id="no-vegan-label" class="red-ingredients-label">
-                        &#x25CF; Non vegan
-                    </div>
-
-                    <div id="no-vegetarian-label" class="red-ingredients-label">
-                        &#x25CF; Non végétarien
-                    </div> -->
-
-                    <!-- <div id="no-palm-oil-label" class="green-ingredients-label">
-                        &#x25CF; Sans huile de palme
-                    </div>
-
-                    <div id="vegan-label" class="green-ingredients-label">
-                        &#x25CF; Produit vegan
-                    </div>
-
-                    <div id="vegetarian-label" class="green-ingredients-label">
-                        &#x25CF; Produit végétarien
-                    </div> -->
-
-                    <!-- <div
-                        id="unknown-palm-oil-label"
-                        class="unknown-ingredients-label"
-                    >
-                        &#x25CF; Présence huile de palme inconnue
-                    </div>
-
-                    <div
-                        id="unknown-vegan-label"
-                        class="unknown-ingredients-label"
-                    >
-                        &#x25CF; Caractère vegan inconnu
-                    </div>
-
-                    <div
-                        id="unknown-vegetarian-label"
-                        class="unknown-ingredients-label"
-                    >
-                        &#x25CF; Caractère végétarien inconnu
-                    </div> -->
-                </div>
+                <div id="analysis-labels"></div>
             </section>
             <section id="sec-nutrition">
                 <h2>Repères nutritionnels</h2>
@@ -193,12 +159,25 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    <small>
+                        <strong>Quantité :</strong> &#x1F600;: basse &#x1F610;:
+                        modérée &#x1F629;: elévée.
+                    </small>
+                </p>
             </section>
         </div>
         <footer>
             <p>Zuka, le yuka du futur</p>
-            <p>Conditions d'utilisation et copyright</p>
-            <p>Réseaux sociaux</p>
+            <p>Made with &#x2665; by Julien Jégo @ Afpa Beaumont - 2022</p>
+            <p>
+                <a
+                    href="https://www.disclaimergenerator.net/live.php?token=7STjGcIhubC5YRApw4s6DhgCx86hVZGA"
+                    target="_blank"
+                    rel="noopener"
+                    >Mentions légales</a
+                >
+            </p>
         </footer>
         <script src="app.js"></script>
     </body>

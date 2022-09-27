@@ -1,57 +1,110 @@
-let nbFormat = new Intl.NumberFormat("fr-FR");
+const nbFormat = new Intl.NumberFormat("fr-FR");
+const searchBox = document.querySelector("#bar-search");
+const searchBtn = document.querySelector("#btn-search");
+const randomBtn = document.querySelector("#btn-random-search");
+const alertBox = document.querySelector("#alert-box");
+const randomProducts = [
+    "3760020507350",
+    "3155250358788",
+    "3033710065967",
+    "7622210713780",
+    "3228857000852",
+    "3268840001008",
+    "3046920022606",
+    "7613035989535",
+];
 
-let searchBtn = document.querySelector("#btn-search");
-let productLbl = document.querySelector("#produit-nom");
-let productQty = document.querySelector("#produit-quantite");
-let productBrand = document.querySelector("#produit-marque");
-let productCat = document.querySelector("#produit-categorie");
-let productImg = document.querySelector("#produit-img");
-let bioLbl = document.querySelector("#bio-label");
+const productLbl = document.querySelector("#product-name");
+const productQty = document.querySelector("#product-quantity");
+const productBrand = document.querySelector("#product-brand");
+const productCat = document.querySelector("#product-category");
+const productImg = document.querySelector("#product-img");
+const bioLbl = document.querySelector("#bio-label");
 
-let ecoScore = document.querySelector("#ecoscore");
-let nutriScore = document.querySelector("#nutriscore");
-let novaScore = document.querySelector("#novascore");
+const ecoScore = document.querySelector("#ecoscore");
+const nutriScore = document.querySelector("#nutriscore");
+const novaScore = document.querySelector("#novascore");
 
-let productIngredients = document.querySelector("#list-ingredients");
-let productAdditives = document.querySelector("#additifs");
-let productAllergens = document.querySelector("#allergens");
+const productIngredients = document.querySelector("#list-ingredients");
+const productAdditives = document.querySelector("#additives");
+const productAllergens = document.querySelector("#allergens");
+const productAnalysis = document.querySelector("#analysis-labels");
 
-let productAnalysis = document.querySelector("#analysis-labels");
+const nutriEnergy = document.querySelector("#energy");
+const nutriFat = document.querySelector("#fat");
+const nutriSatFat = document.querySelector("#saturated-fat");
+const nutriSugar = document.querySelector("#sugar");
+const nutriSalt = document.querySelector("#salt");
 
-let nutriEnergy = document.querySelector("#energy");
-let nutriFat = document.querySelector("#fat");
-let nutriSatFat = document.querySelector("#saturated-fat");
-let nutriSugar = document.querySelector("#sugar");
-let nutriSalt = document.querySelector("#salt");
+searchBox.onkeydown = function (e) {
+    e = e || window.event;
+    if (e.which == 13 || e.keyCode == 13) {
+        e.preventDefault();
+        doSearch();
+    }
+};
 
-searchBtn.addEventListener("click", function () {
-    // "https://fr.openfoodfacts.org/api/v0/product/3017620421006.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity"
-    fetch("http://127.0.0.1:5500/json/3083681081534.json")
+searchBtn.addEventListener("click", doSearch, false);
+randomBtn.addEventListener("click", doRandomSearch, false);
+
+function doRandomSearch() {
+    let rndInt = Math.floor(Math.random() * randomProducts.length);
+    let url = `https://fr.openfoodfacts.org/api/v0/product/${randomProducts[rndInt]}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
+    fetchIt(url);
+}
+
+function doSearch() {
+    let productCode = searchBox.value;
+    let url = `https://fr.openfoodfacts.org/api/v0/product/${productCode}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
+    fetchIt(url);
+}
+
+function fetchIt(url) {
+    fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            getProductInfo(data);
-            getScores(data);
-            getIngredients(data);
-            getAdditives(data);
-            getAllergens(data);
-            getNutriments(data);
-            getAnalysis(data);
+            if (data.status === 0) {
+                alertBox.style.display = "block";
+            } else {
+                alertBox.style.display = "none";
+                console.log(data);
+                getProductInfo(data);
+                getScores(data);
+                getIngredients(data);
+                getAdditives(data);
+                getAllergens(data);
+                getNutriments(data);
+                getAnalysis(data);
+            }
         });
-});
+}
 
 function getProductInfo(data) {
-    productLbl.innerHTML = `<strong>${data.product.product_name}</strong>`;
-    productQty.innerHTML = data.product.quantity;
-    productBrand.innerHTML = data.product.brands.replaceAll(",", ", ");
-    productCat.innerHTML = data.product.categories.match(/[^,.\s][^,\d]*$/);
-    productImg.src = data.product.image_front_url;
+    data.product.product_name == null
+        ? (productLbl.innerHTML = "<strong>Aucun nom</strong>")
+        : (productLbl.innerHTML = `<strong>${data.product.product_name}</strong>`);
 
-    if (data.product.labels.includes("Bio,")) {
-        bioLbl.style.visibility = "visible";
-    } else {
-        bioLbl.style.visibility = "hidden";
-    }
+    data.product.quantity == null
+        ? (productQty.innerHTML = "Aucune valeur")
+        : (productQty.innerHTML = data.product.quantity);
+
+    data.product.brands == null
+        ? (productBrand.innerHTML = "Aucune valeur")
+        : (productBrand.innerHTML = data.product.brands.replaceAll(",", ", "));
+
+    data.product.categories == null
+        ? (productCat.innerHTML = "Aucune valeur")
+        : (productCat.innerHTML = data.product.categories
+              .replaceAll("en:", "")
+              .match(/[^,.\s][^,\d]*$/));
+
+    data.product.image_front_url == null
+        ? (productImg.src = "../img/placeholder.png")
+        : (productImg.src = data.product.image_front_url);
+
+    data.product.labels != null && data.product.labels.includes("Bio")
+        ? (bioLbl.style.display = "inline-block")
+        : (bioLbl.style.display = "none");
 }
 
 function getScores(data) {
@@ -110,30 +163,36 @@ function getScores(data) {
             novaScore.src = "../img/nova-4.svg";
             break;
         default:
-            novaScore.src = "../img/nutriscore-na.svg";
+            novaScore.src = "../img/nova-na.svg";
     }
 }
 
 function getIngredients(data) {
-    if (data.product.ingredients_text_debug != null) {
-        productIngredients.innerHTML =
-            data.product.ingredients_text_debug.replaceAll("_", "");
-    } else if (data.product.ingredients_text_fr != null) {
+    if (data.product.ingredients_text_fr != null) {
         productIngredients.innerHTML =
             data.product.ingredients_text_fr.replaceAll("_", "");
-    } else {
+    } else if (data.product.ingredients_text_en != null) {
         productIngredients.innerHTML =
             data.product.ingredients_text_en.replaceAll("_", "");
+    } else if (data.product.ingredients_text_debug != null) {
+        productIngredients.innerHTML =
+            data.product.ingredients_text_debug.replaceAll("_", "");
+    } else {
+        productIngredients.innerHTML = "Aucun ingrédient ajouté";
     }
 }
 
 function getAdditives(data) {
-    if (data.product.additives_original_tags.length == 0) {
-        productAdditives.innerHTML = "Aucun additif dans ce produit";
+    productAdditives.innerHTML = "";
+    if (
+        data.product.additives_original_tags == null ||
+        data.product.additives_original_tags.length == 0
+    ) {
+        productAdditives.innerHTML = "Aucun additif connu dans ce produit";
     } else {
         for (let add of data.product.additives_original_tags) {
             let additive = document.createElement("div");
-            additive.setAttribute("class", "additif");
+            additive.setAttribute("class", "additive");
             additive.innerHTML =
                 "&#x25CF;&nbsp;" + add.replace("en:", "").toUpperCase();
             productAdditives.appendChild(additive);
@@ -142,8 +201,8 @@ function getAdditives(data) {
 }
 
 function getAllergens(data) {
-    if (data.product.allergens.length == null) {
-        productAllergens.innerHTML = "Aucun allergène dans ce produit";
+    if (data.product.allergens == null || data.product.allergens.length == 0) {
+        productAllergens.innerHTML = "aucun allergène connu dans ce produit";
     } else {
         productAllergens.innerHTML = data.product.allergens.replaceAll(
             "en:",
@@ -153,91 +212,117 @@ function getAllergens(data) {
 }
 
 function getAnalysis(data) {
+    productAnalysis.innerHTML = "";
     let palmOilLabel = document.createElement("div");
     let veganLabel = document.createElement("div");
     let vegatarianLabel = document.createElement("div");
 
-    switch (data.product.ingredients_analysis_tags[0]) {
-        case "en:palm-oil":
-            palmOilLabel.setAttribute("class", "red-ingredients-label");
-            palmOilLabel.innerHTML = "&#x25CF;&nbsp;Huile de palme";
-            productAnalysis.appendChild(palmOilLabel);
-            break;
-        case "en:palm-oil-free":
-            palmOilLabel.setAttribute("class", "green-ingredients-label");
-            palmOilLabel.innerHTML = "&#x25CF;&nbsp;Sans huile de palme";
-            productAnalysis.appendChild(palmOilLabel);
-            break;
-        case "en:palm-oil-content-unknown":
-        case "en:may-contain-palm-oil":
-        default:
-            palmOilLabel.setAttribute("class", "unknown-ingredients-label");
-            palmOilLabel.innerHTML =
-                "&#x25CF;&nbsp;Présence huile de palme inconnue";
-            productAnalysis.appendChild(palmOilLabel);
-            break;
-    }
+    if (data.product.ingredients_analysis_tags == null) {
+        productAnalysis.innerHTML = "Rien à afficher ici...";
+    } else {
+        switch (data.product.ingredients_analysis_tags[0]) {
+            case "en:palm-oil":
+                palmOilLabel.setAttribute("class", "red-ingredients-label");
+                palmOilLabel.innerHTML =
+                    "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Huile de palme";
+                productAnalysis.appendChild(palmOilLabel);
+                break;
+            case "en:palm-oil-free":
+                palmOilLabel.setAttribute("class", "green-ingredients-label");
+                palmOilLabel.innerHTML =
+                    "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Sans huile de palme";
+                productAnalysis.appendChild(palmOilLabel);
+                break;
+            case "en:palm-oil-content-unknown":
+            case "en:may-contain-palm-oil":
+            default:
+                palmOilLabel.setAttribute("class", "unknown-ingredients-label");
+                palmOilLabel.innerHTML =
+                    "&nbsp;Présence huile de palme inconnue";
+                productAnalysis.appendChild(palmOilLabel);
+                break;
+        }
 
-    switch (data.product.ingredients_analysis_tags[1]) {
-        case "en:non-vegan":
-            veganLabel.setAttribute("class", "red-ingredients-label");
-            veganLabel.innerHTML = "&#x25CF;&nbsp;Non vegan";
-            productAnalysis.appendChild(veganLabel);
-            break;
-        case "en:vegan":
-            veganLabel.setAttribute("class", "green-ingredients-label");
-            veganLabel.innerHTML = "&#x25CF;&nbsp;Vegan";
-            productAnalysis.appendChild(veganLabel);
-            break;
-        case "en:vegan-status-unknown":
-        case "en:maybe-vegan":
-        default:
-            veganLabel.setAttribute("class", "unknown-ingredients-label");
-            veganLabel.innerHTML = "&#x25CF;&nbsp;Caractère vegan inconnu";
-            productAnalysis.appendChild(veganLabel);
-            break;
-    }
-    switch (data.product.ingredients_analysis_tags[2]) {
-        case "en:non-vegetarian":
-            vegatarianLabel.setAttribute("class", "red-ingredients-label");
-            vegatarianLabel.innerHTML = "&#x25CF;&nbsp;Non végétarien";
-            productAnalysis.appendChild(vegatarianLabel);
-            break;
-        case "en:vegetarian":
-            vegatarianLabel.setAttribute("class", "green-ingredients-label");
-            vegatarianLabel.innerHTML = "&#x25CF;&nbsp;Végétarien";
-            productAnalysis.appendChild(vegatarianLabel);
-            break;
-        case "en:vegetarian-status-unknown":
-        case "en:maybe-vegetarian":
-        default:
-            vegatarianLabel.setAttribute("class", "unknown-ingredients-label");
-            vegatarianLabel.innerHTML =
-                "&#x25CF;&nbsp;Caractère végétarien inconnu";
-            productAnalysis.appendChild(vegatarianLabel);
-            break;
+        switch (data.product.ingredients_analysis_tags[1]) {
+            case "en:non-vegan":
+                veganLabel.setAttribute("class", "red-ingredients-label");
+                veganLabel.innerHTML =
+                    "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
+                productAnalysis.appendChild(veganLabel);
+                break;
+            case "en:vegan":
+                veganLabel.setAttribute("class", "green-ingredients-label");
+                veganLabel.innerHTML =
+                    "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
+                productAnalysis.appendChild(veganLabel);
+                break;
+            case "en:vegan-status-unknown":
+            case "en:maybe-vegan":
+            default:
+                veganLabel.setAttribute("class", "unknown-ingredients-label");
+                veganLabel.innerHTML = "&nbsp;Caractère vegan inconnu";
+                productAnalysis.appendChild(veganLabel);
+                break;
+        }
+        switch (data.product.ingredients_analysis_tags[2]) {
+            case "en:non-vegetarian":
+                vegatarianLabel.setAttribute("class", "red-ingredients-label");
+                vegatarianLabel.innerHTML =
+                    "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
+                productAnalysis.appendChild(vegatarianLabel);
+                break;
+            case "en:vegetarian":
+                vegatarianLabel.setAttribute(
+                    "class",
+                    "green-ingredients-label"
+                );
+                vegatarianLabel.innerHTML =
+                    "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
+                productAnalysis.appendChild(vegatarianLabel);
+                break;
+            case "en:vegetarian-status-unknown":
+            case "en:maybe-vegetarian":
+            default:
+                vegatarianLabel.setAttribute(
+                    "class",
+                    "unknown-ingredients-label"
+                );
+                vegatarianLabel.innerHTML =
+                    "&nbsp;Caractère végétarien inconnu";
+                productAnalysis.appendChild(vegatarianLabel);
+                break;
+        }
     }
 }
 
 function getNutriments(data) {
-    nutriEnergy.innerHTML =
-        nbFormat.format(data.product.nutriments["energy-kcal_100g"]) + " kcal";
-    nutriFat.innerHTML =
-        nbFormat.format(data.product.nutriments.fat_100g) +
-        " g " +
-        getNutrimentLevel(data, "fat");
-    nutriSatFat.innerHTML =
-        nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
-        " g " +
-        getNutrimentLevel(data, "saturated-fat");
-    nutriSugar.innerHTML =
-        nbFormat.format(data.product.nutriments.sugars_100g) +
-        " g " +
-        getNutrimentLevel(data, "sugars");
-    nutriSalt.innerHTML =
-        nbFormat.format(data.product.nutriments.salt_100g) +
-        " g " +
-        getNutrimentLevel(data, "salt");
+    if (Object.keys(data.product.nutriments).length === 0) {
+        nutriEnergy.innerHTML = "?";
+        nutriFat.innerHTML = "?";
+        nutriSatFat.innerHTML = "?";
+        nutriSugar.innerHTML = "?";
+        nutriSalt.innerHTML = "?";
+    } else {
+        nutriEnergy.innerHTML =
+            nbFormat.format(data.product.nutriments["energy-kcal_100g"]) +
+            " kcal";
+        nutriFat.innerHTML =
+            nbFormat.format(data.product.nutriments.fat_100g) +
+            " g " +
+            getNutrimentLevel(data, "fat");
+        nutriSatFat.innerHTML =
+            nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
+            " g " +
+            getNutrimentLevel(data, "saturated-fat");
+        nutriSugar.innerHTML =
+            nbFormat.format(data.product.nutriments.sugars_100g) +
+            " g " +
+            getNutrimentLevel(data, "sugars");
+        nutriSalt.innerHTML =
+            nbFormat.format(data.product.nutriments.salt_100g) +
+            " g " +
+            getNutrimentLevel(data, "salt");
+    }
 }
 
 function getNutrimentLevel(data, nutri) {

@@ -2,17 +2,18 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222;
+    color: #333;
 }
 
 header {
     background-color: #f2f2f2;
-    height: 100px;
+    height: 80px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    text-align: center;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
     -moz-box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
     box-shadow: 0px 1px 5px 0px rgba(115, 115, 115, 0.74);
@@ -33,6 +34,14 @@ section {
     padding: 1rem 6rem;
 }
 
+a {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
 #search-form {
     width: 60%;
     margin: 2rem auto;
@@ -49,37 +58,57 @@ section {
     padding: 12px 20px;
     width: 100%;
 }
-
-#btn-search {
+.buttons {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-top: 1rem;
     padding: 10px 15px;
-    width: 30%;
+}
+.buttons:hover {
+    cursor: pointer;
 }
 
 #btn-search:hover {
     background-color: #ddd;
-    cursor: pointer;
 }
 
 #btn-search:active {
     background-color: #ccc;
 }
 
-#fiche-produit {
+#btn-random-search {
+    background-color: #71c7ec;
+}
+
+#btn-random-search:hover {
+    background-color: #65b3d4;
+}
+
+#btn-random-search:active {
+    background-color: #5a9fbc;
+}
+
+#alert-box {
+    background-color: #f8d7da;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: none;
+    color: #aa1d2d;
+}
+
+#product-card {
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(64, 64, 64, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(64, 64, 64, 0.75);
     box-shadow: 0px 0px 5px 0px rgba(64, 64, 64, 0.75);
 }
 
-.produit {
+.product {
     display: flex;
 }
 
-.produit > img {
+.product > img {
     width: 200px;
     height: 200px;
     object-fit: contain;
@@ -90,39 +119,12 @@ section {
 }
 
 #bio-label {
-    background-color: #04aa6d;
+    background-color: #026441;
     color: white;
     margin: auto;
     padding: 10px 25px;
     border-radius: 25px;
-    visibility: hidden;
-}
-
-#analysis-labels {
-    display: flex;
-}
-
-.red-ingredients-label {
-    background-color: crimson;
-    color: white;
-    padding: 10px 25px;
-    margin-right: 1rem;
-    border-radius: 25px;
-}
-
-.green-ingredients-label {
-    background-color: #04aa6d;
-    color: white;
-    padding: 10px 25px;
-    margin-right: 1rem;
-    border-radius: 25px;
-}
-
-.unknown-ingredients-label {
-    background-color: #ddd;
-    padding: 10px 25px;
-    margin-right: 1rem;
-    border-radius: 25px;
+    display: none;
 }
 
 #sec-scores {
@@ -138,16 +140,49 @@ section {
     max-width: 100%;
 }
 
-#additifs {
+#additives {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.additive {
+    background-color: #ddd;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 2px solid #aa1d2d;
+    border-radius: 25px;
+}
+
+#analysis-labels {
     display: flex;
 }
 
-.additif {
-    background-color: #ddd;
+#analysis-labels > div {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
     margin-right: 1rem;
-    padding: 10px;
-    border: 2px solid crimson;
     border-radius: 25px;
+}
+
+#analysis-labels > div > img {
+    height: 30px;
+}
+
+.red-ingredients-label {
+    background-color: #aa1d2d;
+    color: white;
+}
+
+.green-ingredients-label {
+    background-color: #026441;
+    color: white;
+}
+
+.unknown-ingredients-label {
+    background-color: #ddd;
+    color: black;
 }
 
 #sec-nutrition > table {
@@ -159,7 +194,7 @@ section {
 #sec-nutrition > table > thead > tr > th {
     padding: 8px;
     text-align: left;
-    background-color: #04aa6d;
+    background-color: #026441;
     color: white;
 }
 
@@ -188,12 +223,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: crimson;
+    background-color: #aa1d2d;
     color: white;
 }
 
 footer > p {
     margin: 4rem;
+    text-align: center;
 }
 
 /* MEDIA QUERIES */
@@ -211,7 +247,7 @@ footer > p {
         width: 100%;
     }
 
-    #fiche-produit {
+    #product-card {
         border-radius: 0px;
     }
 
