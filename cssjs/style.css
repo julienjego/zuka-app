@@ -216,7 +216,7 @@ a:visited {
 }
 
 #sec-nutrition > table > caption {
-    visibility: hidden;
+    display: none;
 }
 
 footer {
