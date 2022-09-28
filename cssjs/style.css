@@ -106,6 +106,7 @@ a:visited {
 
 .product {
     display: flex;
+    align-items: center;
 }
 
 .product > img {
@@ -249,6 +250,12 @@ footer > p {
 
     #product-card {
         border-radius: 0px;
+    }
+
+    .product > img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
     }
 
     #sec-nutrition > table {
