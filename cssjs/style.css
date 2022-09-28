@@ -90,6 +90,8 @@ a:visited {
 }
 
 #alert-box {
+    width: 60%;
+    margin: auto;
     background-color: #f8d7da;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -248,6 +250,10 @@ footer > p {
         width: 100%;
     }
 
+    #alert-box {
+        width: 90%;
+    }
+
     #product-card {
         border-radius: 0px;
     }
@@ -290,6 +296,10 @@ footer > p {
         width: 80%;
     }
 
+    #alert-box {
+        width: 80%;
+    }
+
     #sec-nutrition > table {
         width: 100%;
     }
@@ -319,6 +329,10 @@ footer > p {
     }
 
     #search-form {
+        width: 80%;
+    }
+
+    #alert-box {
         width: 80%;
     }
 

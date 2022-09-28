@@ -47,18 +47,21 @@ searchBox.onkeydown = function (e) {
 searchBtn.addEventListener("click", doSearch, false);
 randomBtn.addEventListener("click", doRandomSearch, false);
 
+// Va chercher un produit parmi la liste de manière aléatoire
 function doRandomSearch() {
     let rndInt = Math.floor(Math.random() * randomProducts.length);
     let url = `https://fr.openfoodfacts.org/api/v0/product/${randomProducts[rndInt]}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
     fetchIt(url);
 }
 
+// Lance la recherche depuis le bouton "Rechercher"
 function doSearch() {
     let productCode = searchBox.value;
     let url = `https://fr.openfoodfacts.org/api/v0/product/${productCode}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
     fetchIt(url);
 }
 
+// On effectue le fetch avec l'url du random ou la recherche classique
 function fetchIt(url) {
     fetch(url)
         .then((response) => response.json())
@@ -79,6 +82,7 @@ function fetchIt(url) {
         });
 }
 
+// On récupère les infos  pour la section "Le produit"
 function getProductInfo(data) {
     data.product.product_name == null
         ? (productLbl.innerHTML = "<strong>Aucun nom</strong>")
@@ -107,6 +111,7 @@ function getProductInfo(data) {
         : (bioLbl.style.display = "none");
 }
 
+// On récupère les scores et on affiche les bonnes images
 function getScores(data) {
     // Obtenir et modifier l'éco-score
     switch (data.product.ecoscore_grade) {
@@ -167,6 +172,7 @@ function getScores(data) {
     }
 }
 
+// On récupère la liste des ingrédients, trois cas pour être sûr d'obtenir quelque chose
 function getIngredients(data) {
     if (data.product.ingredients_text_fr != null) {
         productIngredients.innerHTML =
@@ -182,6 +188,7 @@ function getIngredients(data) {
     }
 }
 
+// On récupère les additifs s'il y en a
 function getAdditives(data) {
     productAdditives.innerHTML = "";
     if (
@@ -200,6 +207,7 @@ function getAdditives(data) {
     }
 }
 
+// On récupère les allergènes s'il y en a
 function getAllergens(data) {
     if (data.product.allergens == null || data.product.allergens.length == 0) {
         productAllergens.innerHTML = "aucun allergène connu dans ce produit";
@@ -211,6 +219,7 @@ function getAllergens(data) {
     }
 }
 
+// On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
 function getAnalysis(data) {
     productAnalysis.innerHTML = "";
     let palmOilLabel = document.createElement("div");
@@ -220,6 +229,7 @@ function getAnalysis(data) {
     if (data.product.ingredients_analysis_tags == null) {
         productAnalysis.innerHTML = "Rien à afficher ici...";
     } else {
+        // Labels huile de palme
         switch (data.product.ingredients_analysis_tags[0]) {
             case "en:palm-oil":
                 palmOilLabel.setAttribute("class", "red-ingredients-label");
@@ -243,6 +253,7 @@ function getAnalysis(data) {
                 break;
         }
 
+        // Labels vegan
         switch (data.product.ingredients_analysis_tags[1]) {
             case "en:non-vegan":
                 veganLabel.setAttribute("class", "red-ingredients-label");
@@ -264,6 +275,8 @@ function getAnalysis(data) {
                 productAnalysis.appendChild(veganLabel);
                 break;
         }
+
+        // Labels végé
         switch (data.product.ingredients_analysis_tags[2]) {
             case "en:non-vegetarian":
                 vegatarianLabel.setAttribute("class", "red-ingredients-label");
@@ -295,6 +308,7 @@ function getAnalysis(data) {
     }
 }
 
+// On récupère les infos pour le tableau "Repères nutritionnels"
 function getNutriments(data) {
     if (Object.keys(data.product.nutriments).length === 0) {
         nutriEnergy.innerHTML = "?";
@@ -325,6 +339,7 @@ function getNutriments(data) {
     }
 }
 
+// On récupère les niveaux de nutriments et on affiche des emojis suivant le niveau
 function getNutrimentLevel(data, nutri) {
     switch (data.product.nutrient_levels[nutri]) {
         case "low":
