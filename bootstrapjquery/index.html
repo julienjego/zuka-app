@@ -10,6 +10,132 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
         />
+        <link rel="icon" type="image/png" href="../img/tangerine.png" />
     </head>
-    <body></body>
+    <body>
+        <header>
+            <nav class="navbar bg-light">
+                <div class="container-fluid justify-content-center">
+                    <h1 class="fw-bold">&#x1F34A; Zuka, le yuka du futur</h1>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <h2 class="fw-lighter">Rechercher un produit</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <input
+                            type="search"
+                            class="form-control"
+                            placeholder="Par ex. : 5000281005409"
+                            maxlength="13"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <button
+                            type="submit"
+                            class="btn btn-secondary"
+                            id="searchButton"
+                        >
+                            Rechercher &#x1F50E;
+                        </button>
+                        <button
+                            type="submit"
+                            class="btn btn-secondary text-nowrap"
+                            id="randomButton"
+                        >
+                            Un produit au hasard &#x1F3B2;
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div
+                            class="alert alert-danger"
+                            role="alert"
+                            id="alertBox"
+                        >
+                            &#128553; Hum... Ce produit n'existe pas ou est
+                            introuvable, retentez votre chance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-light">
+                <div class="container pt-2">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-12 col-md-8 col-lg-6 text-center">
+                            <h3>Le produit</h3>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-4">
+                        <div class="col-6 col-md-4 text-end">
+                            <img
+                                src="../img/placeholder.png"
+                                class="img-thumbnail img-fluid"
+                                alt="product-picture"
+                            />
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <p>NOM</p>
+                            <p>Marque(s) :</p>
+                            <p>Quantité :</p>
+                            <p>Catégorie :</p>
+                        </div>
+                        <div
+                            class="col col-md-4 mt-2 mt-md-0 d-flex flex-row flex-md-column"
+                        >
+                            <img
+                                src="../img/nutriscore-na.svg"
+                                alt="nutriscore"
+                                class="mx-md-auto mb-2 img-fluid"
+                            /><img
+                                src="../img/nova-na.svg"
+                                alt="nova-score"
+                                class="mx-md-auto mb-2 img-fluid"
+                            /><img
+                                src="../img/ecoscore-na.svg"
+                                alt="ecoscore"
+                                class="mx-md-auto mb-2 img-fluid"
+                            />
+                        </div>
+                    </div>
+                    <!-- <div
+                        class="row align-items-center"
+                    >
+                        <div class="col-4">
+                            <img
+                                src="../img/nutriscore-na.svg"
+                                alt="nutriscore"
+                                class="mb-2 img-fluid"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="../img/nova-na.svg"
+                                alt="nutriscore"
+                                class="mb-2 img-fluid"
+                            />
+                        </div>
+                        <div class="col-4">
+                            <img
+                                src="../img/ecoscore-na.svg"
+                                alt="nutriscore"
+                                class="mb-2 img-fluid"
+                            />
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
 </html>
