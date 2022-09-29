@@ -6,6 +6,7 @@ $(document).ready(function () {
                 console.log(data);
                 getProductInfo(data);
                 getScores(data);
+                getIngredients(data);
             }
         );
     });
@@ -110,6 +111,27 @@ $(document).ready(function () {
                 break;
             default:
                 novaScore.attr("src", "../img/nova-na.svg");
+        }
+    }
+
+    // On récupère la liste des ingrédients, trois cas pour être sûr d'obtenir quelque chose
+    function getIngredients(data) {
+        const productIngredients = $("#list-ingredients");
+
+        if (data.product.ingredients_text_fr != null) {
+            productIngredients.text(
+                data.product.ingredients_text_fr.replaceAll("_", "")
+            );
+        } else if (data.product.ingredients_text_en != null) {
+            productIngredients.text(
+                data.product.ingredients_text_en.replaceAll("_", "")
+            );
+        } else if (data.product.ingredients_text_debug != null) {
+            productIngredients.text(
+                data.product.ingredients_text_debug.replaceAll("_", "")
+            );
+        } else {
+            productIngredients.text("Aucun ingrédient ajouté");
         }
     }
 });
