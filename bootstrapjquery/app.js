@@ -9,6 +9,7 @@ $(document).ready(function () {
                 getIngredients(data);
                 getAdditives(data);
                 getAllergens(data);
+                getAnalysis(data);
             }
         );
     });
@@ -180,6 +181,109 @@ $(document).ready(function () {
                 let li = $("<li>").text(alCap).addClass("list-group-item");
                 li.appendTo(productAllergens);
             });
+        }
+    }
+
+    //TODO régler ce bordel
+
+    // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
+    function getAnalysis(data) {
+        const productAnalysis = $("#analysis-labels");
+
+        productAnalysis.html("");
+        let veganLabel = $("span");
+        let vegatarianLabel = $("span");
+
+        if (data.product.ingredients_analysis_tags === null) {
+            productAnalysis.text("Rien à afficher ici...");
+        } else {
+            // Labels huile de palme
+            switch (data.product.ingredients_analysis_tags[0]) {
+                case "en:palm-oil":
+                    productAnalysis.append(
+                        $("span")
+                            .addClass("badge rounded-pill bg-danger p-3 mt-1")
+                            .text("Huile de palme")
+                    );
+                    break;
+                case "en:palm-oil-free":
+                    productAnalysis.append(
+                        $("span")
+                            .addClass("badge rounded-pill bg-success p-3 mt-1")
+                            .text("Huile de palme")
+                    );
+                    break;
+                case "en:palm-oil-content-unknown":
+                case "en:may-contain-palm-oil":
+                default:
+                    productAnalysis.append(
+                        $("span")
+                            .addClass(
+                                "badge rounded-pill bg-secondary p-3 mt-1"
+                            )
+                            .text("Huile de palme")
+                    );
+                    break;
+            }
+
+            // // Labels vegan
+            // switch (data.product.ingredients_analysis_tags[1]) {
+            //     case "en:non-vegan":
+            //         veganLabel.setAttribute("class", "red-ingredients-label");
+            //         veganLabel.innerHTML =
+            //             "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
+            //         productAnalysis.append(veganLabel);
+            //         break;
+            //     case "en:vegan":
+            //         veganLabel.setAttribute("class", "green-ingredients-label");
+            //         veganLabel.innerHTML =
+            //             "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
+            //         productAnalysis.append(veganLabel);
+            //         break;
+            //     case "en:vegan-status-unknown":
+            //     case "en:maybe-vegan":
+            //     default:
+            //         veganLabel.setAttribute(
+            //             "class",
+            //             "unknown-ingredients-label"
+            //         );
+            //         veganLabel.innerHTML = "&nbsp;Caractère vegan inconnu";
+            //         productAnalysis.append(veganLabel);
+            //         break;
+            // }
+
+            // // Labels végé
+            // switch (data.product.ingredients_analysis_tags[2]) {
+            //     case "en:non-vegetarian":
+            //         vegatarianLabel.setAttribute(
+            //             "class",
+            //             "red-ingredients-label"
+            //         );
+            //         vegatarianLabel.innerHTML =
+            //             "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
+            //         productAnalysis.append(vegatarianLabel);
+            //         break;
+            //     case "en:vegetarian":
+            //         vegatarianLabel.setAttribute(
+            //             "class",
+            //             "green-ingredients-label"
+            //         );
+            //         vegatarianLabel.innerHTML =
+            //             "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
+            //         productAnalysis.append(vegatarianLabel);
+            //         break;
+            //     case "en:vegetarian-status-unknown":
+            //     case "en:maybe-vegetarian":
+            //     default:
+            //         vegatarianLabel.setAttribute(
+            //             "class",
+            //             "unknown-ingredients-label"
+            //         );
+            //         vegatarianLabel.innerHTML =
+            //             "&nbsp;Caractère végétarien inconnu";
+            //         productAnalysis.append(vegatarianLabel);
+            //         break;
+            // }
         }
     }
 });
