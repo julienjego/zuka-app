@@ -32,6 +32,7 @@
                         <input
                             type="search"
                             class="form-control"
+                            id="bar-search"
                             placeholder="Par ex. : 5000281005409"
                             maxlength="13"
                             required
@@ -43,14 +44,14 @@
                         <button
                             type="submit"
                             class="btn btn-secondary"
-                            id="searchButton"
+                            id="btn-search"
                         >
                             Rechercher &#x1F50E;
                         </button>
                         <button
                             type="submit"
                             class="btn btn-secondary text-nowrap"
-                            id="randomButton"
+                            id="btn-random-search"
                         >
                             Un produit au hasard &#x1F3B2;
                         </button>
@@ -61,7 +62,7 @@
                         <div
                             class="alert alert-danger"
                             role="alert"
-                            id="alertBox"
+                            id="alert-box"
                         >
                             &#128553; Hum... Ce produit n'existe pas ou est
                             introuvable, retentez votre chance.
@@ -81,16 +82,23 @@
                             <img
                                 src="../img/placeholder.png"
                                 class="img-thumbnail img-fluid"
+                                id="product-img"
                                 alt="product-picture"
                             />
                         </div>
                         <div class="col-6">
-                            <p>NOM</p>
-                            <p>Marque(s) : <span></span></p>
-                            <p>Quantité : <span></span></p>
-                            <p>Catégorie : <span></span></p>
+                            <p id="product-name">NOM</p>
                             <p>
-                                <span class="badge rounded-pill bg-success p-3"
+                                Marque(s) : <span id="product-quantity"></span>
+                            </p>
+                            <p>Quantité : <span id="product-brand"></span></p>
+                            <p>
+                                Catégorie : <span id="product-category"></span>
+                            </p>
+                            <p>
+                                <span
+                                    class="badge rounded-pill bg-success p-3"
+                                    id="bio-label"
                                     >Produit Bio</span
                                 >
                             </p>
@@ -104,6 +112,9 @@
                                 src="../img/nutriscore-na.svg"
                                 alt="nutriscore"
                                 class="mb-2 img-fluid"
+                                id="nutriscore"
+                                data-bs-toggle="modal"
+                                data-bs-target="#nutrimodal"
                             />
                         </div>
                         <div class="col-4 col-lg-2">
@@ -111,6 +122,9 @@
                                 src="../img/nova-na.svg"
                                 alt="novascore"
                                 class="mb-2 img-fluid"
+                                id="novascore"
+                                data-bs-toggle="modal"
+                                data-bs-target="#novamodal"
                             />
                         </div>
                         <div class="col-4 col-lg-2">
@@ -118,6 +132,9 @@
                                 src="../img/ecoscore-na.svg"
                                 alt="ecoscore"
                                 class="mb-2 img-fluid"
+                                id="ecoscore"
+                                data-bs-toggle="modal"
+                                data-bs-target="#ecomodal"
                             />
                         </div>
                     </div>
@@ -253,5 +270,139 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Modal windows -->
+
+        <div class="modal" tabindex="-1" id="nutrimodal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nutri-score</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Le Nutri-score est un système d'étiquetage
+                            nutritionnel à cinq niveaux, allant de A à E et du
+                            vert au rouge, établi en fonction de la valeur
+                            nutritionnelle d'un produit alimentaire.
+                        </p>
+                        <p>
+                            <strong>Éléments défavorables au score</strong>
+                            : Apport calorique pour cent grammes ; Teneur en
+                            sucre ; Teneur en graisses saturées ; Teneur en sel.
+                        </p>
+                        <p>
+                            <strong>Éléments favorables au score</strong>
+                            : Teneur en fruits, légumes, légumineuses (dont les
+                            légumes secs), oléagineux, huiles de colza, de noix
+                            et d'olive ; Teneur en fibres ; Teneur en protéines.
+                        </p>
+                        <p>
+                            <em
+                                ><small
+                                    >Source :
+                                    <a
+                                        href="https://fr.wikipedia.org/wiki/Nutri-score"
+                                        >Wikipédia</a
+                                    ></small
+                                ></em
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" id="novamodal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Classification Nova</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            La classification NOVA est une répartition des
+                            aliments en quatre groupes en fonction du degré de
+                            transformation des matières dont ils sont constitués
+                            :
+                        </p>
+                        <p>1. Aliments peu ou non transformés</p>
+                        <p>2. Ingrédients culinaires</p>
+                        <p>3. Aliments transformés</p>
+                        <p>4. Aliments ultratransformés</p>
+                        <p>
+                            <em
+                                ><small
+                                    >Source :
+                                    <a
+                                        href="https://fr.wikipedia.org/wiki/NOVA_(nutrition)"
+                                        >Wikipédia</a
+                                    ></small
+                                ></em
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" tabindex="-1" id="ecomodal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Éco-score</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            L’Éco-score est un label alimentaire caractérisant
+                            l'impact écologique des produits. À l’instar du
+                            Nutri-score, il comporte cinq catégories : de A
+                            (vert, le choix vers lequel se tourner) à E (rouge,
+                            le choix à éviter).
+                        </p>
+                        <p>
+                            La méthode utilisée pour calculer l’Éco-score repose
+                            sur un double calcul : l’analyse du cycle de vie
+                            (ACV) d’une part, et un système de bonus-malus
+                            d’autre part.
+                        </p>
+                        <p>
+                            <em
+                                ><small
+                                    >Source :
+                                    <a
+                                        href="https://fr.wikipedia.org/wiki/%C3%89co-score"
+                                        >Wikipédia</a
+                                    ></small
+                                ></em
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
