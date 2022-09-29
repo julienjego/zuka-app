@@ -1,12 +1,13 @@
 $(document).ready(function () {
     $("#btn-search").click(() => {
         $.getJSON(
-            "https://fr.openfoodfacts.org/api/v0/product/3033710065967.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity",
+            "https://fr.openfoodfacts.org/api/v0/product/3228857000852.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity",
             (data) => {
                 console.log(data);
                 getProductInfo(data);
                 getScores(data);
                 getIngredients(data);
+                getAdditives(data);
             }
         );
     });
@@ -132,6 +133,28 @@ $(document).ready(function () {
             );
         } else {
             productIngredients.text("Aucun ingrédient ajouté");
+        }
+    }
+
+    // On récupère les additifs s'il y en a
+    function getAdditives(data) {
+        const productAdditives = $("#additives");
+
+        productAdditives.html("");
+        if (
+            data.product.additives_original_tags === null ||
+            data.product.additives_original_tags.length === 0
+        ) {
+            $(
+                "<li class='list-group-item'>Aucun additif connu dans ce produit</li>"
+            ).appendTo(productAdditives);
+        } else {
+            data.product.additives_original_tags.forEach((additive) => {
+                let add = additive.replace("en:", "").toUpperCase();
+
+                let li = $("<li>").text(add).addClass("list-group-item");
+                li.appendTo(productAdditives);
+            });
         }
     }
 });
