@@ -1,13 +1,14 @@
 $(document).ready(function () {
     $("#btn-search").click(() => {
         $.getJSON(
-            "https://fr.openfoodfacts.org/api/v0/product/3228857000852.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity",
+            "https://fr.openfoodfacts.org/api/v0/product/3046920022606.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity",
             (data) => {
                 console.log(data);
                 getProductInfo(data);
                 getScores(data);
                 getIngredients(data);
                 getAdditives(data);
+                getAllergens(data);
             }
         );
     });
@@ -154,6 +155,30 @@ $(document).ready(function () {
 
                 let li = $("<li>").text(add).addClass("list-group-item");
                 li.appendTo(productAdditives);
+            });
+        }
+    }
+
+    // On récupère les allergènes s'il y en a
+    function getAllergens(data) {
+        const productAllergens = $("#allergens");
+
+        productAllergens.html("");
+        if (
+            data.product.allergens === null ||
+            data.product.allergens.length === 0
+        ) {
+            productAllergens.append(
+                "<li class='list-group-item'>Aucun allergène connu dans ce produit</li>"
+            );
+        } else {
+            let allergen = data.product.allergens.split(",");
+            console.log(allergen);
+            allergen.forEach(function (aller) {
+                let al = aller.replace("en:", "");
+                let alCap = al.charAt(0).toUpperCase() + al.slice(1);
+                let li = $("<li>").text(alCap).addClass("list-group-item");
+                li.appendTo(productAllergens);
             });
         }
     }
