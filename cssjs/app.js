@@ -8,7 +8,7 @@ randomBtn.addEventListener("click", doRandomSearch, false);
 
 searchBox.onkeydown = function (e) {
     e = e || window.event;
-    if (e.which == 13 || e.keyCode == 13) {
+    if (e.which === 13 || e.keyCode === 13) {
         e.preventDefault();
         doSearch();
     }
@@ -71,25 +71,25 @@ function getProductInfo(data) {
     const productImg = document.querySelector("#product-img");
     const bioLbl = document.querySelector("#bio-label");
 
-    data.product.product_name == null
+    data.product.product_name === null
         ? (productLbl.innerHTML = "<strong>Aucun nom</strong>")
         : (productLbl.innerHTML = `<strong>${data.product.product_name}</strong>`);
 
-    data.product.quantity == null
+    data.product.quantity === null
         ? (productQty.innerHTML = "Aucune valeur")
         : (productQty.innerHTML = data.product.quantity);
 
-    data.product.brands == null
+    data.product.brands === null
         ? (productBrand.innerHTML = "Aucune valeur")
         : (productBrand.innerHTML = data.product.brands.replaceAll(",", ", "));
 
-    data.product.categories == null
+    data.product.categories === null
         ? (productCat.innerHTML = "Aucune valeur")
         : (productCat.innerHTML = data.product.categories
               .replaceAll("en:", "")
               .match(/[^,.\s][^,\d]*$/));
 
-    data.product.image_front_url == null
+    data.product.image_front_url === null
         ? (productImg.src = "../img/placeholder.png")
         : (productImg.src = data.product.image_front_url);
 
@@ -187,8 +187,8 @@ function getAdditives(data) {
 
     productAdditives.innerHTML = "";
     if (
-        data.product.additives_original_tags == null ||
-        data.product.additives_original_tags.length == 0
+        data.product.additives_original_tags === null ||
+        data.product.additives_original_tags.length === 0
     ) {
         productAdditives.innerHTML = "Aucun additif connu dans ce produit";
     } else {
@@ -206,7 +206,10 @@ function getAdditives(data) {
 function getAllergens(data) {
     const productAllergens = document.querySelector("#allergens");
 
-    if (data.product.allergens == null || data.product.allergens.length == 0) {
+    if (
+        data.product.allergens === null ||
+        data.product.allergens.length === 0
+    ) {
         productAllergens.innerHTML = "aucun allergène connu dans ce produit";
     } else {
         productAllergens.innerHTML = data.product.allergens.replaceAll(
@@ -225,7 +228,7 @@ function getAnalysis(data) {
     let veganLabel = document.createElement("div");
     let vegatarianLabel = document.createElement("div");
 
-    if (data.product.ingredients_analysis_tags == null) {
+    if (data.product.ingredients_analysis_tags === null) {
         productAnalysis.innerHTML = "Rien à afficher ici...";
     } else {
         // Labels huile de palme
