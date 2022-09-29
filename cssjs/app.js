@@ -2,39 +2,9 @@ const nbFormat = new Intl.NumberFormat("fr-FR");
 const searchBox = document.querySelector("#bar-search");
 const searchBtn = document.querySelector("#btn-search");
 const randomBtn = document.querySelector("#btn-random-search");
-const alertBox = document.querySelector("#alert-box");
-const randomProducts = [
-    "3760020507350",
-    "3155250358788",
-    "3033710065967",
-    "7622210713780",
-    "3228857000852",
-    "3268840001008",
-    "3046920022606",
-    "7613035989535",
-];
 
-const productLbl = document.querySelector("#product-name");
-const productQty = document.querySelector("#product-quantity");
-const productBrand = document.querySelector("#product-brand");
-const productCat = document.querySelector("#product-category");
-const productImg = document.querySelector("#product-img");
-const bioLbl = document.querySelector("#bio-label");
-
-const ecoScore = document.querySelector("#ecoscore");
-const nutriScore = document.querySelector("#nutriscore");
-const novaScore = document.querySelector("#novascore");
-
-const productIngredients = document.querySelector("#list-ingredients");
-const productAdditives = document.querySelector("#additives");
-const productAllergens = document.querySelector("#allergens");
-const productAnalysis = document.querySelector("#analysis-labels");
-
-const nutriEnergy = document.querySelector("#energy");
-const nutriFat = document.querySelector("#fat");
-const nutriSatFat = document.querySelector("#saturated-fat");
-const nutriSugar = document.querySelector("#sugar");
-const nutriSalt = document.querySelector("#salt");
+searchBtn.addEventListener("click", doSearch, false);
+randomBtn.addEventListener("click", doRandomSearch, false);
 
 searchBox.onkeydown = function (e) {
     e = e || window.event;
@@ -44,11 +14,19 @@ searchBox.onkeydown = function (e) {
     }
 };
 
-searchBtn.addEventListener("click", doSearch, false);
-randomBtn.addEventListener("click", doRandomSearch, false);
-
 // Va chercher un produit parmi la liste de manière aléatoire
 function doRandomSearch() {
+    const randomProducts = [
+        "3760020507350",
+        "3155250358788",
+        "3033710065967",
+        "7622210713780",
+        "3228857000852",
+        "3268840001008",
+        "3046920022606",
+        "7613035989535",
+    ];
+
     let rndInt = Math.floor(Math.random() * randomProducts.length);
     let url = `https://fr.openfoodfacts.org/api/v0/product/${randomProducts[rndInt]}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
     fetchIt(url);
@@ -63,6 +41,8 @@ function doSearch() {
 
 // On effectue le fetch avec l'url du random ou la recherche classique
 function fetchIt(url) {
+    const alertBox = document.querySelector("#alert-box");
+
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -84,6 +64,13 @@ function fetchIt(url) {
 
 // On récupère les infos  pour la section "Le produit"
 function getProductInfo(data) {
+    const productLbl = document.querySelector("#product-name");
+    const productQty = document.querySelector("#product-quantity");
+    const productBrand = document.querySelector("#product-brand");
+    const productCat = document.querySelector("#product-category");
+    const productImg = document.querySelector("#product-img");
+    const bioLbl = document.querySelector("#bio-label");
+
     data.product.product_name == null
         ? (productLbl.innerHTML = "<strong>Aucun nom</strong>")
         : (productLbl.innerHTML = `<strong>${data.product.product_name}</strong>`);
@@ -113,6 +100,10 @@ function getProductInfo(data) {
 
 // On récupère les scores et on affiche les bonnes images
 function getScores(data) {
+    const ecoScore = document.querySelector("#ecoscore");
+    const nutriScore = document.querySelector("#nutriscore");
+    const novaScore = document.querySelector("#novascore");
+
     // Obtenir et modifier l'éco-score
     switch (data.product.ecoscore_grade) {
         case "a":
@@ -174,6 +165,8 @@ function getScores(data) {
 
 // On récupère la liste des ingrédients, trois cas pour être sûr d'obtenir quelque chose
 function getIngredients(data) {
+    const productIngredients = document.querySelector("#list-ingredients");
+
     if (data.product.ingredients_text_fr != null) {
         productIngredients.innerHTML =
             data.product.ingredients_text_fr.replaceAll("_", "");
@@ -190,6 +183,8 @@ function getIngredients(data) {
 
 // On récupère les additifs s'il y en a
 function getAdditives(data) {
+    const productAdditives = document.querySelector("#additives");
+
     productAdditives.innerHTML = "";
     if (
         data.product.additives_original_tags == null ||
@@ -209,6 +204,8 @@ function getAdditives(data) {
 
 // On récupère les allergènes s'il y en a
 function getAllergens(data) {
+    const productAllergens = document.querySelector("#allergens");
+
     if (data.product.allergens == null || data.product.allergens.length == 0) {
         productAllergens.innerHTML = "aucun allergène connu dans ce produit";
     } else {
@@ -221,6 +218,8 @@ function getAllergens(data) {
 
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
 function getAnalysis(data) {
+    const productAnalysis = document.querySelector("#analysis-labels");
+
     productAnalysis.innerHTML = "";
     let palmOilLabel = document.createElement("div");
     let veganLabel = document.createElement("div");
@@ -310,6 +309,12 @@ function getAnalysis(data) {
 
 // On récupère les infos pour le tableau "Repères nutritionnels"
 function getNutriments(data) {
+    const nutriEnergy = document.querySelector("#energy");
+    const nutriFat = document.querySelector("#fat");
+    const nutriSatFat = document.querySelector("#saturated-fat");
+    const nutriSugar = document.querySelector("#sugar");
+    const nutriSalt = document.querySelector("#salt");
+
     if (Object.keys(data.product.nutriments).length === 0) {
         nutriEnergy.innerHTML = "?";
         nutriFat.innerHTML = "?";
