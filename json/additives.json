@@ -1,0 +1,1994 @@
+[
+  {
+    "additif": "E330",
+    "description": "Acide citrique"
+  },
+  {
+    "additif": "E322",
+    "description": "Lécithines"
+  },
+  {
+    "additif": "E322I",
+    "description": "Lécithine"
+  },
+  {
+    "additif": "E14XX",
+    "description": "Amidons modifiés"
+  },
+  {
+    "additif": "E500",
+    "description": "Carbonates de sodium"
+  },
+  {
+    "additif": "E300",
+    "description": "Acide ascorbique"
+  },
+  {
+    "additif": "E415",
+    "description": "Gomme xanthane"
+  },
+  {
+    "additif": "E471",
+    "description": "Mono- et diglycérides d'acides gras"
+  },
+  {
+    "additif": "E250",
+    "description": "Nitrite de sodium"
+  },
+  {
+    "additif": "E450",
+    "description": "Diphosphates"
+  },
+  {
+    "additif": "E440",
+    "description": "Pectines"
+  },
+  {
+    "additif": "E412",
+    "description": "Gomme de guar"
+  },
+  {
+    "additif": "E202",
+    "description": "Sorbate de potassium"
+  },
+  {
+    "additif": "E407",
+    "description": "Carraghénanes"
+  },
+  {
+    "additif": "E500II",
+    "description": "Carbonate acide de sodium"
+  },
+  {
+    "additif": "E331",
+    "description": "Citrates de sodium"
+  },
+  {
+    "additif": "E301",
+    "description": "Ascorbate de sodium"
+  },
+  {
+    "additif": "E503",
+    "description": "Carbonates d'ammonium"
+  },
+  {
+    "additif": "E160C",
+    "description": "Extrait de paprika"
+  },
+  {
+    "additif": "E422",
+    "description": "Glycérol"
+  },
+  {
+    "additif": "E420",
+    "description": "Sorbitol"
+  },
+  {
+    "additif": "E160A",
+    "description": "Carotènes mélangés"
+  },
+  {
+    "additif": "E428",
+    "description": "Gélatine"
+  },
+  {
+    "additif": "E316",
+    "description": "Érythorbate de sodium"
+  },
+  {
+    "additif": "E270",
+    "description": "Acide lactique"
+  },
+  {
+    "additif": "E621",
+    "description": "Glutamate monosodique"
+  },
+  {
+    "additif": "E450I",
+    "description": "Pyrophosphate de sodium acide"
+  },
+  {
+    "additif": "E120",
+    "description": "Acide carminique"
+  },
+  {
+    "additif": "E451",
+    "description": "Triphosphates"
+  },
+  {
+    "additif": "E100",
+    "description": "Curcumine"
+  },
+  {
+    "additif": "E414",
+    "description": "Gomme d'acacia"
+  },
+  {
+    "additif": "E262",
+    "description": "Acétates de sodium"
+  },
+  {
+    "additif": "E160",
+    "description": "Caroténoïdes"
+  },
+  {
+    "additif": "E150A",
+    "description": "Caramel E150a"
+  },
+  {
+    "additif": "E252",
+    "description": "Nitrate de potassium"
+  },
+  {
+    "additif": "E955",
+    "description": "Sucralose"
+  },
+  {
+    "additif": "E296",
+    "description": "Acide malique"
+  },
+  {
+    "additif": "E950",
+    "description": "Acésulfame K"
+  },
+  {
+    "additif": "E392",
+    "description": "Extrait de romarin"
+  },
+  {
+    "additif": "E452",
+    "description": "Polyphosphates"
+  },
+  {
+    "additif": "E160B",
+    "description": "Rocou"
+  },
+  {
+    "additif": "E160AI",
+    "description": "Bêta-carotène"
+  },
+  {
+    "additif": "E503II",
+    "description": "Carbonate acide d'ammonium"
+  },
+  {
+    "additif": "E903",
+    "description": "Cire de carnauba"
+  },
+  {
+    "additif": "E224",
+    "description": "Disulfite de potassium"
+  },
+  {
+    "additif": "E306",
+    "description": "Extrait riche en tocophérols"
+  },
+  {
+    "additif": "E401",
+    "description": "Alginate de sodium"
+  },
+  {
+    "additif": "E163",
+    "description": "Anthocyanes"
+  },
+  {
+    "additif": "E466",
+    "description": "Carboxyméthylcellulose"
+  },
+  {
+    "additif": "E211",
+    "description": "Benzoate de sodium"
+  },
+  {
+    "additif": "E282",
+    "description": "Propionate de calcium"
+  },
+  {
+    "additif": "E341",
+    "description": "Phosphates de calcium"
+  },
+  {
+    "additif": "E223",
+    "description": "Disulfite de sodium"
+  },
+  {
+    "additif": "E133",
+    "description": "Bleu brillant FCF"
+  },
+  {
+    "additif": "E476",
+    "description": "Esters polyglycériques d'acides gras d'huile de ricin"
+  },
+  {
+    "additif": "E326",
+    "description": "Lactate de potassium"
+  },
+  {
+    "additif": "E150D",
+    "description": "Caramel au sulfite d'ammonium"
+  },
+  {
+    "additif": "E472E",
+    "description": "Ester Monoacéthyltartrique de mono- et diglycérides d'acides gras"
+  },
+  {
+    "additif": "E410",
+    "description": "Gomme de caroube"
+  },
+  {
+    "additif": "E220",
+    "description": "Anhydride sulfureux"
+  },
+  {
+    "additif": "E161B",
+    "description": "Lutéine"
+  },
+  {
+    "additif": "E200",
+    "description": "Acide sorbique"
+  },
+  {
+    "additif": "E951",
+    "description": "Aspartame"
+  },
+  {
+    "additif": "E965",
+    "description": "Maltitol"
+  },
+  {
+    "additif": "E150C",
+    "description": "Caramel ammoniacal"
+  },
+  {
+    "additif": "E960",
+    "description": "Glucosides de stéviol"
+  },
+  {
+    "additif": "E171",
+    "description": "Oxyde de titane"
+  },
+  {
+    "additif": "E260",
+    "description": "Acide acétique"
+  },
+  {
+    "additif": "E1400",
+    "description": "Dextrines"
+  },
+  {
+    "additif": "E500I",
+    "description": "Carbonate de sodium"
+  },
+  {
+    "additif": "E262I",
+    "description": "Acétate de sodium"
+  },
+  {
+    "additif": "E325",
+    "description": "Lactate de sodium"
+  },
+  {
+    "additif": "E481",
+    "description": "Stéaroyl-2-lactylate de sodium"
+  },
+  {
+    "additif": "E162",
+    "description": "Rouge de betterave"
+  },
+  {
+    "additif": "E631",
+    "description": "Inosinate disodique"
+  },
+  {
+    "additif": "E406",
+    "description": "Agar-agar"
+  },
+  {
+    "additif": "E627",
+    "description": "Guanylate disodique"
+  },
+  {
+    "additif": "E290",
+    "description": "Dioxyde de carbone"
+  },
+  {
+    "additif": "E141",
+    "description": "Complexe cuivrique des chlorophylles et des chlorophyllines"
+  },
+  {
+    "additif": "E460",
+    "description": "Cellulose"
+  },
+  {
+    "additif": "E901",
+    "description": "Cire d'abeille"
+  },
+  {
+    "additif": "E150",
+    "description": "Caramel"
+  },
+  {
+    "additif": "E101",
+    "description": "Riboflavine"
+  },
+  {
+    "additif": "E102",
+    "description": "Tartrazine"
+  },
+  {
+    "additif": "E509",
+    "description": "Chlorure de calcium"
+  },
+  {
+    "additif": "E334",
+    "description": "Acide L-tartrique"
+  },
+  {
+    "additif": "E461",
+    "description": "Méthylcellulose"
+  },
+  {
+    "additif": "E339",
+    "description": "Phosphates de sodium"
+  },
+  {
+    "additif": "E501",
+    "description": "Carbonates de potassium"
+  },
+  {
+    "additif": "E472B",
+    "description": "Ester diacétyl-lactique de mono- et diglycérides d'acides gras"
+  },
+  {
+    "additif": "E153",
+    "description": "Charbon végétal médicinal"
+  },
+  {
+    "additif": "E445",
+    "description": "Esters glycériques de résine de bois"
+  },
+  {
+    "additif": "E385",
+    "description": "Éthylène diamine tétra-acétate de calcium disodium"
+  },
+  {
+    "additif": "E340",
+    "description": "Orthophosphates de potassium"
+  },
+  {
+    "additif": "E336",
+    "description": "Tartrates de potassium"
+  },
+  {
+    "additif": "E327",
+    "description": "Lactate de calcium"
+  },
+  {
+    "additif": "E551",
+    "description": "Dioxyde de silicium"
+  },
+  {
+    "additif": "E904",
+    "description": "Gomme-laque"
+  },
+  {
+    "additif": "E338",
+    "description": "Acide orthophosphorique"
+  },
+  {
+    "additif": "E331III",
+    "description": "Citrate trisodique"
+  },
+  {
+    "additif": "E129",
+    "description": "Rouge allura AC"
+  },
+  {
+    "additif": "E304",
+    "description": "Acide palmityle-6-L-ascorbique"
+  },
+  {
+    "additif": "E235",
+    "description": "Natamycine"
+  },
+  {
+    "additif": "E1105",
+    "description": "Lysozyme"
+  },
+  {
+    "additif": "E170",
+    "description": "Carbonates de calcium"
+  },
+  {
+    "additif": "E502",
+    "description": "Carbonates"
+  },
+  {
+    "additif": "E575",
+    "description": "Glucono-delta-lactone"
+  },
+  {
+    "additif": "E333",
+    "description": "Citrates de calcium"
+  },
+  {
+    "additif": "E407A",
+    "description": "Algues euchema transformées"
+  },
+  {
+    "additif": "E524",
+    "description": "Hydroxyde de sodium"
+  },
+  {
+    "additif": "E420II",
+    "description": "Sirop de sorbitol"
+  },
+  {
+    "additif": "E101I",
+    "description": "Riboflavine"
+  },
+  {
+    "additif": "E110",
+    "description": "Jaune orangé S"
+  },
+  {
+    "additif": "E464",
+    "description": "Hydroxypropylméthylcellulose"
+  },
+  {
+    "additif": "E418",
+    "description": "Gomme gellane"
+  },
+  {
+    "additif": "E635",
+    "description": "5'-ribonucléotide disodique"
+  },
+  {
+    "additif": "E131",
+    "description": "Bleu patenté V"
+  },
+  {
+    "additif": "E1510",
+    "description": "Éthanol"
+  },
+  {
+    "additif": "E222",
+    "description": "Bisulfite de sodium"
+  },
+  {
+    "additif": "E953",
+    "description": "Isomalt"
+  },
+  {
+    "additif": "E967",
+    "description": "Xylitol"
+  },
+  {
+    "additif": "E321",
+    "description": "Butylhydroxytoluène"
+  },
+  {
+    "additif": "E473",
+    "description": "Sucroester"
+  },
+  {
+    "additif": "E965II",
+    "description": "Sirop de maltitol"
+  },
+  {
+    "additif": "E1200",
+    "description": "Polydextrose"
+  },
+  {
+    "additif": "E417",
+    "description": "Gomme tara"
+  },
+  {
+    "additif": "E132",
+    "description": "Indigotine carmin d'indigo"
+  },
+  {
+    "additif": "E503I",
+    "description": "Carbonate d'ammonium"
+  },
+  {
+    "additif": "E579",
+    "description": "Gluconate de fer"
+  },
+  {
+    "additif": "E920",
+    "description": "L-Cystéine et ses chlorhydrates"
+  },
+  {
+    "additif": "E172",
+    "description": "Oxyde et hydroxyde de fer"
+  },
+  {
+    "additif": "E1442",
+    "description": "Phosphate de diamidon hydroxypropyle"
+  },
+  {
+    "additif": "E170I",
+    "description": "Carbonate de calcium"
+  },
+  {
+    "additif": "E475",
+    "description": "Esters polyglycériques d'acides gras"
+  },
+  {
+    "additif": "E304I",
+    "description": "Palmitate d'ascorbyle"
+  },
+  {
+    "additif": "E1100",
+    "description": "Amylases"
+  },
+  {
+    "additif": "E320",
+    "description": "Butylhydroxyanisol"
+  },
+  {
+    "additif": "E442",
+    "description": "Phosphatides d'ammonium"
+  },
+  {
+    "additif": "E350",
+    "description": "Malates de sodium"
+  },
+  {
+    "additif": "E307",
+    "description": "Alphatocophérol"
+  },
+  {
+    "additif": "E1103",
+    "description": "Invertase"
+  },
+  {
+    "additif": "E1422",
+    "description": "Adipate de diamidon acétylé"
+  },
+  {
+    "additif": "E150B",
+    "description": "Caramel de sulfite caustique"
+  },
+  {
+    "additif": "E341I",
+    "description": "Phosphate monocalcique"
+  },
+  {
+    "additif": "E501I",
+    "description": "Carbonate de potassium"
+  },
+  {
+    "additif": "E262II",
+    "description": "Diacétate de sodium"
+  },
+  {
+    "additif": "E251",
+    "description": "Nitrate de sodium"
+  },
+  {
+    "additif": "E954",
+    "description": "Saccharine et ses sels"
+  },
+  {
+    "additif": "E570",
+    "description": "Acide stéarique"
+  },
+  {
+    "additif": "E952",
+    "description": "Acide cyclamique et ses sels"
+  },
+  {
+    "additif": "E508",
+    "description": "Chlorure de potassium"
+  },
+  {
+    "additif": "E472C",
+    "description": "Ester citrique des mono et diglycérides d'acides gras alimentaires"
+  },
+  {
+    "additif": "E160AII",
+    "description": "Carotènes végétaux"
+  },
+  {
+    "additif": "E451I",
+    "description": "TPP"
+  },
+  {
+    "additif": "E452I",
+    "description": "Polyphosphate de sodium"
+  },
+  {
+    "additif": "E140",
+    "description": "Chlorophylles et Chlorophyllines"
+  },
+  {
+    "additif": "E421",
+    "description": "Mannitol"
+  },
+  {
+    "additif": "E332",
+    "description": "Citrates de potassium"
+  },
+  {
+    "additif": "E470B",
+    "description": "Sels de magnésium d'acides gras"
+  },
+  {
+    "additif": "E164",
+    "description": "Safran"
+  },
+  {
+    "additif": "E263",
+    "description": "Acétate de calcium"
+  },
+  {
+    "additif": "E141II",
+    "description": "Sels de sodium et de potassium de complexes cupriques de chlorophyllines"
+  },
+  {
+    "additif": "E968",
+    "description": "Érythritol"
+  },
+  {
+    "additif": "E535",
+    "description": "Ferrocyanure de sodium"
+  },
+  {
+    "additif": "E339II",
+    "description": "Phosphate disodique"
+  },
+  {
+    "additif": "E472A",
+    "description": "Ester diacétyl-acétique d'acides gras"
+  },
+  {
+    "additif": "E160E",
+    "description": "Apocaroténal 8'"
+  },
+  {
+    "additif": "E141I",
+    "description": "Complexes cuivriques de chlorophylles"
+  },
+  {
+    "additif": "E492",
+    "description": "Tristéarate de sorbitane"
+  },
+  {
+    "additif": "E572",
+    "description": "Stéarate de magnésium"
+  },
+  {
+    "additif": "E319",
+    "description": "Butylhydroquinone tertiaire"
+  },
+  {
+    "additif": "E553",
+    "description": "Silicates de magnésium"
+  },
+  {
+    "additif": "E504",
+    "description": "Carbonates de magnésium"
+  },
+  {
+    "additif": "E553B",
+    "description": "Talc"
+  },
+  {
+    "additif": "E340II",
+    "description": "Phosphate dipotassique"
+  },
+  {
+    "additif": "E450III",
+    "description": "Diphosphate tétrasodique"
+  },
+  {
+    "additif": "E122",
+    "description": "Azorubine carmoisine"
+  },
+  {
+    "additif": "E261",
+    "description": "Acétates de potassium"
+  },
+  {
+    "additif": "E1101",
+    "description": "Protéases"
+  },
+  {
+    "additif": "E336I",
+    "description": "Tartrate monopotassique"
+  },
+  {
+    "additif": "E435",
+    "description": "Monostéarate de polyoxyéthylène sorbitane"
+  },
+  {
+    "additif": "E124",
+    "description": "Ponceau 4R"
+  },
+  {
+    "additif": "E127",
+    "description": "Érythrosine"
+  },
+  {
+    "additif": "E350II",
+    "description": "Malate acide de sodium"
+  },
+  {
+    "additif": "E641",
+    "description": "L-leucine"
+  },
+  {
+    "additif": "E341II",
+    "description": "Phosphate dicalcique"
+  },
+  {
+    "additif": "E460I",
+    "description": "Cellulose microcristalline"
+  },
+  {
+    "additif": "E477",
+    "description": "Esters du propylène-glycol d'acide gras"
+  },
+  {
+    "additif": "E491",
+    "description": "Monostéarate de sorbitane"
+  },
+  {
+    "additif": "E640",
+    "description": "Glycines et son sel de sodium"
+  },
+  {
+    "additif": "E1520",
+    "description": "Propylène glycol"
+  },
+  {
+    "additif": "E516",
+    "description": "Sulfate de calcium"
+  },
+  {
+    "additif": "E140I",
+    "description": "Chlorophylles"
+  },
+  {
+    "additif": "E472",
+    "description": "Esters d'acides gras alimentaires"
+  },
+  {
+    "additif": "E501II",
+    "description": "Carbonate acide de potassium"
+  },
+  {
+    "additif": "E1505",
+    "description": "Citrate de triéthyle"
+  },
+  {
+    "additif": "E525",
+    "description": "Hydroxyde de potassium"
+  },
+  {
+    "additif": "E341III",
+    "description": "Phosphate tricalcique"
+  },
+  {
+    "additif": "E331I",
+    "description": "Citrate monosodique"
+  },
+  {
+    "additif": "E333III",
+    "description": "Citrate tricalcique"
+  },
+  {
+    "additif": "E1104",
+    "description": "Lipases"
+  },
+  {
+    "additif": "E315",
+    "description": "Acide érythorbique"
+  },
+  {
+    "additif": "E228",
+    "description": "Sulfite acide de potassium"
+  },
+  {
+    "additif": "E440II",
+    "description": "Pectine amidée"
+  },
+  {
+    "additif": "E297",
+    "description": "Acide fumarique"
+  },
+  {
+    "additif": "E175",
+    "description": "Or"
+  },
+  {
+    "additif": "E1519",
+    "description": "Alcool benzylique"
+  },
+  {
+    "additif": "E444",
+    "description": "Acétate isobutyrate de saccharose"
+  },
+  {
+    "additif": "E281",
+    "description": "Propionate de sodium"
+  },
+  {
+    "additif": "E433",
+    "description": "Monooléate de polyoxyéthylène de sorbitane"
+  },
+  {
+    "additif": "E210",
+    "description": "Acide benzoïque"
+  },
+  {
+    "additif": "E900",
+    "description": "E900 food additive"
+  },
+  {
+    "additif": "E339III",
+    "description": "Phosphate trisodique"
+  },
+  {
+    "additif": "E140II",
+    "description": "Chlorophyllines"
+  },
+  {
+    "additif": "E242",
+    "description": "Dicarbonate de diméthyle"
+  },
+  {
+    "additif": "E640I",
+    "description": "Glycine"
+  },
+  {
+    "additif": "E413",
+    "description": "Gomme de dragon"
+  },
+  {
+    "additif": "E1450",
+    "description": "Octényle succinate d'amidon sodique"
+  },
+  {
+    "additif": "E221",
+    "description": "Sulfite de sodium"
+  },
+  {
+    "additif": "E1414",
+    "description": "Phosphate de diamidon acétylé"
+  },
+  {
+    "additif": "E151",
+    "description": "Noir brillant BN"
+  },
+  {
+    "additif": "E310",
+    "description": "Gallate de propyle"
+  },
+  {
+    "additif": "E142",
+    "description": "Vert acide brillant BS"
+  },
+  {
+    "additif": "E172II",
+    "description": "Oxyde de fer rouge"
+  },
+  {
+    "additif": "E905",
+    "description": "Cire synthétique"
+  },
+  {
+    "additif": "E104",
+    "description": "Jaune de quinoléine"
+  },
+  {
+    "additif": "E510",
+    "description": "Chlorure d'ammonium"
+  },
+  {
+    "additif": "E942",
+    "description": "Protoxyde d'azote"
+  },
+  {
+    "additif": "E425",
+    "description": "Extrait de racine de Konjac"
+  },
+  {
+    "additif": "E400",
+    "description": "Acide alginique"
+  },
+  {
+    "additif": "E307C",
+    "description": "DL-alpha-Tocophérol"
+  },
+  {
+    "additif": "E1412",
+    "description": "Phosphate de diamidon"
+  },
+  {
+    "additif": "E541",
+    "description": "Phosphate d'aluminium et de sodium"
+  },
+  {
+    "additif": "E470A",
+    "description": "Stéarate de sodium/potassium/calcium"
+  },
+  {
+    "additif": "E944",
+    "description": "Propane"
+  },
+  {
+    "additif": "E160D",
+    "description": "Lycopène"
+  },
+  {
+    "additif": "E943A",
+    "description": "Butane"
+  },
+  {
+    "additif": "E405",
+    "description": "Alginate de propane-1"
+  },
+  {
+    "additif": "E941",
+    "description": "Azote"
+  },
+  {
+    "additif": "E340I",
+    "description": "Phosphate monopotassique"
+  },
+  {
+    "additif": "E404",
+    "description": "Alginate de calcium"
+  },
+  {
+    "additif": "E1420",
+    "description": "Amidon acétylé"
+  },
+  {
+    "additif": "E900A",
+    "description": "Polydiméthylsiloxane"
+  },
+  {
+    "additif": "E536",
+    "description": "Ferrocyanure de potassium"
+  },
+  {
+    "additif": "E482",
+    "description": "Stéaroyl-2-lactylate de calcium"
+  },
+  {
+    "additif": "E468",
+    "description": "Carboxyméthylcellulose de sodium réticulée"
+  },
+  {
+    "additif": "E450II",
+    "description": "Diphosphate trisodique"
+  },
+  {
+    "additif": "E526",
+    "description": "Hydroxyde de calcium"
+  },
+  {
+    "additif": "E1404",
+    "description": "Amidon oxydé"
+  },
+  {
+    "additif": "E460II",
+    "description": "Cellulose en poudre"
+  },
+  {
+    "additif": "E420I",
+    "description": "D-glucitol"
+  },
+  {
+    "additif": "E914",
+    "description": "Cire de polyéthylène oxydée"
+  },
+  {
+    "additif": "E959",
+    "description": "Néohespéridine dihydrochalcone"
+  },
+  {
+    "additif": "E302",
+    "description": "Ascorbate de calcium"
+  },
+  {
+    "additif": "E249",
+    "description": "Nitrite de potassium"
+  },
+  {
+    "additif": "E943B",
+    "description": "Isobutane"
+  },
+  {
+    "additif": "E212",
+    "description": "Benzoate de potassium"
+  },
+  {
+    "additif": "E505",
+    "description": "Carbonate de fer"
+  },
+  {
+    "additif": "E576",
+    "description": "Gluconate de sodium"
+  },
+  {
+    "additif": "E203",
+    "description": "Sorbate de calcium"
+  },
+  {
+    "additif": "E1518",
+    "description": "Triacétine"
+  },
+  {
+    "additif": "E487",
+    "description": "Laurylsulfate de sodium"
+  },
+  {
+    "additif": "E307B",
+    "description": "Tocophérol concentré"
+  },
+  {
+    "additif": "E440I",
+    "description": "Pectine non amidée"
+  },
+  {
+    "additif": "E905A",
+    "description": "Huile minérale de qualité alimentaire"
+  },
+  {
+    "additif": "E343",
+    "description": "Phosphates de magnésium"
+  },
+  {
+    "additif": "E335",
+    "description": "Tartrates de sodium"
+  },
+  {
+    "additif": "E504I",
+    "description": "Carbonate de magnésium"
+  },
+  {
+    "additif": "E363",
+    "description": "Acide succinique"
+  },
+  {
+    "additif": "E285",
+    "description": "Tétraborate de sodium"
+  },
+  {
+    "additif": "E962",
+    "description": "Sel d'aspartame-acésulfame"
+  },
+  {
+    "additif": "E552",
+    "description": "Silicate de calcium"
+  },
+  {
+    "additif": "E173",
+    "description": "Aluminium"
+  },
+  {
+    "additif": "E511",
+    "description": "Chlorure de magnésium"
+  },
+  {
+    "additif": "E555",
+    "description": "Silicate alumino-potassique"
+  },
+  {
+    "additif": "E957",
+    "description": "Thaumatine"
+  },
+  {
+    "additif": "E1102",
+    "description": "Glucose oxydase"
+  },
+  {
+    "additif": "E554",
+    "description": "Silicate alumino-sodique"
+  },
+  {
+    "additif": "E350I",
+    "description": "Malate de sodium"
+  },
+  {
+    "additif": "E234",
+    "description": "Nisine"
+  },
+  {
+    "additif": "E1001",
+    "description": "Sels et esters de choline"
+  },
+  {
+    "additif": "E355",
+    "description": "Acide adipique"
+  },
+  {
+    "additif": "E905C",
+    "description": "Cire de pétrole"
+  },
+  {
+    "additif": "EN:Potassium iodide",
+    "description": ""
+  },
+  {
+    "additif": "E1201",
+    "description": "Poly vinyl pyrrolidone"
+  },
+  {
+    "additif": "E530",
+    "description": "Oxyde de magnésium Périclase"
+  },
+  {
+    "additif": "E332II",
+    "description": "Citrate tripotassique"
+  },
+  {
+    "additif": "E174",
+    "description": "Argent"
+  },
+  {
+    "additif": "E463",
+    "description": "Hydroxypropylcellulose"
+  },
+  {
+    "additif": "E331II",
+    "description": "Citrate disodique"
+  },
+  {
+    "additif": "E514",
+    "description": "Sulfates de sodium"
+  },
+  {
+    "additif": "E927",
+    "description": "Azoformamide et Carbamide"
+  },
+  {
+    "additif": "E155",
+    "description": "Brun chocolat HT"
+  },
+  {
+    "additif": "E339I",
+    "description": "Phosphate monosodique"
+  },
+  {
+    "additif": "E101II",
+    "description": "Riboflavine-5′-phosphate"
+  },
+  {
+    "additif": "E160AIII",
+    "description": "Bêta-carotène issu de blakeslea trispora"
+  },
+  {
+    "additif": "E620",
+    "description": "Acide glutamique"
+  },
+  {
+    "additif": "E963",
+    "description": "Tagatose"
+  },
+  {
+    "additif": "E927B",
+    "description": "Carbamide"
+  },
+  {
+    "additif": "E340III",
+    "description": "Phosphate tripotassique"
+  },
+  {
+    "additif": "E905CI",
+    "description": "Cire microcristalline"
+  },
+  {
+    "additif": "E1521",
+    "description": "Polyéthylène glycol"
+  },
+  {
+    "additif": "E329",
+    "description": "Lactate de magnésium"
+  },
+  {
+    "additif": "E218",
+    "description": "4-hydroxybenzoate de méthyle"
+  },
+  {
+    "additif": "E999",
+    "description": "Extraits de quillaia"
+  },
+  {
+    "additif": "E452VI",
+    "description": "Tripolyphosphate de sodium et de potassium"
+  },
+  {
+    "additif": "E472D",
+    "description": "Ester tartrique de mono- et diglycérides d'acides gras"
+  },
+  {
+    "additif": "E402",
+    "description": "Alginate de potassium"
+  },
+  {
+    "additif": "E432",
+    "description": "Monolaurate de polyoxyéthylène sorbitane"
+  },
+  {
+    "additif": "E515",
+    "description": "Sulfates de potassium"
+  },
+  {
+    "additif": "E201",
+    "description": "Sorbate de sodium"
+  },
+  {
+    "additif": "E958",
+    "description": "Acide glycyrrhizique et sels"
+  },
+  {
+    "additif": "E425I",
+    "description": "Gomme de konjac"
+  },
+  {
+    "additif": "E585",
+    "description": "Lactate ferreux"
+  },
+  {
+    "additif": "E265",
+    "description": "Acide déhydracétique"
+  },
+  {
+    "additif": "E233",
+    "description": "Thiabendazole"
+  },
+  {
+    "additif": "E342",
+    "description": "Phosphates d'ammonium"
+  },
+  {
+    "additif": "E650",
+    "description": "Acétate de zinc"
+  },
+  {
+    "additif": "E1440",
+    "description": "Amidon hydroxypropyle"
+  },
+  {
+    "additif": "E470",
+    "description": "Sels de sodium/potassium/calcium d'acides gras"
+  },
+  {
+    "additif": "E452II",
+    "description": "Polyphosphate potassique"
+  },
+  {
+    "additif": "E966",
+    "description": "Lactitol"
+  },
+  {
+    "additif": "E440A",
+    "description": "Pectine"
+  },
+  {
+    "additif": "E902",
+    "description": "Cire de Candelilla"
+  },
+  {
+    "additif": "E559",
+    "description": "Silicate d'aluminium"
+  },
+  {
+    "additif": "E577",
+    "description": "Gluconate de potassium"
+  },
+  {
+    "additif": "E343I",
+    "description": "Phosphate monomagnésique"
+  },
+  {
+    "additif": "E336II",
+    "description": "Tartrate dipotassique"
+  },
+  {
+    "additif": "E225",
+    "description": "Disulfite de calcium"
+  },
+  {
+    "additif": "E961",
+    "description": "Néotame"
+  },
+  {
+    "additif": "E425II",
+    "description": "Glucomannane de konjac"
+  },
+  {
+    "additif": "E216",
+    "description": "4-hydroxybenzoate de propyle"
+  },
+  {
+    "additif": "E639",
+    "description": "Alanine"
+  },
+  {
+    "additif": "E160AIV",
+    "description": "Carotènes d'algues"
+  },
+  {
+    "additif": "E630",
+    "description": "Acide inosinique"
+  },
+  {
+    "additif": "E522",
+    "description": "Sulfate d'aluminium potassique"
+  },
+  {
+    "additif": "E280",
+    "description": "Acide propionique"
+  },
+  {
+    "additif": "E949",
+    "description": "Dihydrogène"
+  },
+  {
+    "additif": "E529",
+    "description": "Oxyde de calcium"
+  },
+  {
+    "additif": "E514II",
+    "description": "Sulfate acide de sodium"
+  },
+  {
+    "additif": "E550",
+    "description": "Silicate de sodium"
+  },
+  {
+    "additif": "E521",
+    "description": "Sulfate d'aluminium sodique"
+  },
+  {
+    "additif": "E416",
+    "description": "Gomme karaya"
+  },
+  {
+    "additif": "E504II",
+    "description": "Carbonate acide de magnésium"
+  },
+  {
+    "additif": "E517",
+    "description": "Sulfate d'ammonium"
+  },
+  {
+    "additif": "E451II",
+    "description": "Triphosphate pentapotassique"
+  },
+  {
+    "additif": "E450V",
+    "description": "Diphosphate tétrapotassique"
+  },
+  {
+    "additif": "E411",
+    "description": "Gomme d'avoine"
+  },
+  {
+    "additif": "E905CII",
+    "description": "Cire de paraffine"
+  },
+  {
+    "additif": "E337",
+    "description": "Tartrate double de sodium et de potassium"
+  },
+  {
+    "additif": "E381",
+    "description": "Citrate ferrique d'ammonium"
+  },
+  {
+    "additif": "E364",
+    "description": "Succinates de sodium"
+  },
+  {
+    "additif": "E266",
+    "description": "Déhydroacétate de sodium"
+  },
+  {
+    "additif": "E353",
+    "description": "Acide métatartrique"
+  },
+  {
+    "additif": "E1503",
+    "description": "Huile de ricin"
+  },
+  {
+    "additif": "E507",
+    "description": "Acide chlorhydrique"
+  },
+  {
+    "additif": "E180",
+    "description": "Lithol-rubine BK"
+  },
+  {
+    "additif": "E905B",
+    "description": "Petrolatum"
+  },
+  {
+    "additif": "E161H",
+    "description": "Zéaxanthine"
+  },
+  {
+    "additif": "E626",
+    "description": "Acide guanylique"
+  },
+  {
+    "additif": "E514I",
+    "description": "Sulfate de sodium"
+  },
+  {
+    "additif": "E391",
+    "description": "Acide phytique"
+  },
+  {
+    "additif": "E123",
+    "description": "Amarante"
+  },
+  {
+    "additif": "E343II",
+    "description": "Dimagnésium phosphate"
+  },
+  {
+    "additif": "E520",
+    "description": "Sulfate d'aluminium"
+  },
+  {
+    "additif": "ISOMALTOSE",
+    "description": ""
+  },
+  {
+    "additif": "E913",
+    "description": "Lanoline"
+  },
+  {
+    "additif": "E1202",
+    "description": "Polyvinylpolypyrrolidone"
+  },
+  {
+    "additif": "E921",
+    "description": "Cystine"
+  },
+  {
+    "additif": "E558",
+    "description": "Bentonite"
+  },
+  {
+    "additif": "E181",
+    "description": "Tannin"
+  },
+  {
+    "additif": "E580",
+    "description": "Gluconate de magnésium"
+  },
+  {
+    "additif": "E172III",
+    "description": "Oxyde de fer jaune"
+  },
+  {
+    "additif": "E152",
+    "description": "Noir de carbone"
+  },
+  {
+    "additif": "E965I",
+    "description": "D-Maltitol"
+  },
+  {
+    "additif": "E236",
+    "description": "Acide formique"
+  },
+  {
+    "additif": "E231",
+    "description": "Orthophénylphénol"
+  },
+  {
+    "additif": "E172I",
+    "description": "Oxyde de fer noir"
+  },
+  {
+    "additif": "E578",
+    "description": "Gluconate de calcium"
+  },
+  {
+    "additif": "E948",
+    "description": "Dioxygène"
+  },
+  {
+    "additif": "E1410",
+    "description": "Phosphate d'amidon"
+  },
+  {
+    "additif": "E457",
+    "description": "Alpha-Cyclodextrine"
+  },
+  {
+    "additif": "E311",
+    "description": "Gallate d'octyle"
+  },
+  {
+    "additif": "E573",
+    "description": "Stéarate d'aluminium"
+  },
+  {
+    "additif": "E426",
+    "description": "Hémicellulose de soja"
+  },
+  {
+    "additif": "E500III",
+    "description": "Sesquicarbonate de sodium"
+  },
+  {
+    "additif": "E917",
+    "description": "Iodate de potassium"
+  },
+  {
+    "additif": "E469",
+    "description": "Carboxyméthylcellulose hydrolysée de manière enzymatique"
+  },
+  {
+    "additif": "E219",
+    "description": "Dérivé sodique du 4-hydroxybenzoate de méthyle"
+  },
+  {
+    "additif": "E527",
+    "description": "Hydroxyde d'ammonium"
+  },
+  {
+    "additif": "E166",
+    "description": "Bois de santal"
+  },
+  {
+    "additif": "E226",
+    "description": "Sulfite de calcium"
+  },
+  {
+    "additif": "E1504",
+    "description": "Acétate d'éthyle"
+  },
+  {
+    "additif": "E352",
+    "description": "Malates de calcium"
+  },
+  {
+    "additif": "E1411",
+    "description": "Glycérol de diamidon"
+  },
+  {
+    "additif": "E1401",
+    "description": "Amidon traité aux acides"
+  },
+  {
+    "additif": "E637",
+    "description": "Éthyl-maltol"
+  },
+  {
+    "additif": "E1204",
+    "description": "Pullulane"
+  },
+  {
+    "additif": "E430",
+    "description": "Stéarate de polyoxyéthylène (8)"
+  },
+  {
+    "additif": "E230",
+    "description": "Biphényle"
+  },
+  {
+    "additif": "E542",
+    "description": "Phosphate d'os comestible"
+  },
+  {
+    "additif": "E375",
+    "description": "Acide nicotinique"
+  },
+  {
+    "additif": "E512",
+    "description": "Chlorure stanneux"
+  },
+  {
+    "additif": "E427",
+    "description": "Gomme de casse"
+  },
+  {
+    "additif": "E243",
+    "description": "Arginate d'éthyle laurique"
+  },
+  {
+    "additif": "E628",
+    "description": "Guanylate dipotassique"
+  },
+  {
+    "additif": "E333II",
+    "description": "Citrate dicalcique"
+  },
+  {
+    "additif": "E431",
+    "description": "Stéarate de polyoxyéthylène (40)"
+  },
+  {
+    "additif": "E15X",
+    "description": "CI 77266"
+  },
+  {
+    "additif": "DE:Quellkohlensäure",
+    "description": ""
+  },
+  {
+    "additif": "E443",
+    "description": "Huile végétale bromée"
+  },
+  {
+    "additif": "E916",
+    "description": "Iodate de calcium"
+  },
+  {
+    "additif": "E574",
+    "description": "Acide gluconique"
+  },
+  {
+    "additif": "E462",
+    "description": "Éthylcellulose"
+  },
+  {
+    "additif": "E239",
+    "description": "Hexaméthylènetétramine"
+  },
+  {
+    "additif": "E636",
+    "description": "Maltol"
+  },
+  {
+    "additif": "E386",
+    "description": "EDTA disodique"
+  },
+  {
+    "additif": "E513",
+    "description": "Acide sulfurique"
+  },
+  {
+    "additif": "E586",
+    "description": "Héxylresorcinol"
+  },
+  {
+    "additif": "E105",
+    "description": "Jaune solide"
+  },
+  {
+    "additif": "E1203",
+    "description": "Alcool polyvinylique"
+  },
+  {
+    "additif": "E419",
+    "description": "Gomme ghatti"
+  },
+  {
+    "additif": "E459",
+    "description": "Béta-cyclodextrine"
+  },
+  {
+    "additif": "E493",
+    "description": "Monolaurate de sorbitane"
+  },
+  {
+    "additif": "E518",
+    "description": "Sulfate de magnésium"
+  },
+  {
+    "additif": "E370",
+    "description": "4-Heptonolactone"
+  },
+  {
+    "additif": "E1451",
+    "description": "Amidon oxydé acétylé"
+  },
+  {
+    "additif": "E1000",
+    "description": "Acide cholique"
+  },
+  {
+    "additif": "E528",
+    "description": "Hydroxyde de magnésium"
+  },
+  {
+    "additif": "E143",
+    "description": "Vert solide FCF"
+  },
+  {
+    "additif": "E640II",
+    "description": "Sodiumglycinate"
+  },
+  {
+    "additif": "E161",
+    "description": "Xanthophylles"
+  },
+  {
+    "additif": "E170II",
+    "description": "Carbonate acide de calcium"
+  },
+  {
+    "additif": "E303",
+    "description": "Diacétate d'ascorbyle"
+  },
+  {
+    "additif": "E446",
+    "description": "Succistéarine"
+  },
+  {
+    "additif": "E309",
+    "description": "Delta-tocophérol de synthèse"
+  },
+  {
+    "additif": "E490",
+    "description": "Glycole de propylène"
+  },
+  {
+    "additif": "E351",
+    "description": "Malate de potassium"
+  },
+  {
+    "additif": "E217",
+    "description": "Dérivé sodique du 4-hydroxybenzoate de propyle"
+  },
+  {
+    "additif": "E130",
+    "description": "Manascorubine"
+  },
+  {
+    "additif": "E313",
+    "description": "Gallate d'éthyle"
+  },
+  {
+    "additif": "E927A",
+    "description": "Azoformamide"
+  },
+  {
+    "additif": "E930",
+    "description": "Peroxyde de Calcium"
+  },
+  {
+    "additif": "E964",
+    "description": "Sirop de polyglycitol"
+  },
+  {
+    "additif": "E345",
+    "description": "Citrate de magnésium"
+  },
+  {
+    "additif": "E515I",
+    "description": "Sulfate de potassium"
+  },
+  {
+    "additif": "E458",
+    "description": "Gamma-Cyclodextrine"
+  },
+  {
+    "additif": "E553A",
+    "description": "E553a food additive"
+  },
+  {
+    "additif": "E465",
+    "description": "Éthylméthylcellulose"
+  },
+  {
+    "additif": "E283",
+    "description": "Propionate de potassium"
+  },
+  {
+    "additif": "E332I",
+    "description": "Citrate monopotassique"
+  },
+  {
+    "additif": "E710",
+    "description": "Spiramycines Antibiotique"
+  },
+  {
+    "additif": "E354",
+    "description": "Tartrate de calcium"
+  },
+  {
+    "additif": "E484",
+    "description": "Citrate de stéaryle"
+  },
+  {
+    "additif": "E333I",
+    "description": "Citrate monocalcique"
+  },
+  {
+    "additif": "E352I",
+    "description": "Malate de calcium"
+  },
+  {
+    "additif": "E622",
+    "description": "Glutamate monopotassique"
+  },
+  {
+    "additif": "E215",
+    "description": "Dérivé sodique du 4-hydroxybenzoate d'éthyle"
+  },
+  {
+    "additif": "E538",
+    "description": "Ferrocyanure de calcium"
+  },
+  {
+    "additif": "EN:E553ai",
+    "description": ""
+  },
+  {
+    "additif": "E323",
+    "description": "Anoxomère"
+  },
+  {
+    "additif": "E165",
+    "description": "Bleu de gardénia"
+  },
+  {
+    "additif": "E1205",
+    "description": "Copolymère méthacrylate basique"
+  },
+  {
+    "additif": "E154",
+    "description": "Brun FK"
+  },
+  {
+    "additif": "E450VI",
+    "description": "Diphosphate dicalcique"
+  },
+  {
+    "additif": "E161G",
+    "description": "Canthaxanthine"
+  },
+  {
+    "additif": "E452IV",
+    "description": "Polyphosphate de calcium"
+  },
+  {
+    "additif": "E335I",
+    "description": "Tartrate monosodique"
+  },
+  {
+    "additif": "E488",
+    "description": "Mono- et diglycérides éthoxyles"
+  },
+  {
+    "additif": "E232",
+    "description": "Orthophénylphénate de sodium"
+  },
+  {
+    "additif": "E450VII",
+    "description": "Diphosphate biacide de calcium"
+  },
+  {
+    "additif": "E380",
+    "description": "Citrate de triammonium"
+  },
+  {
+    "additif": "E474",
+    "description": "Sucroglycérides"
+  },
+  {
+    "additif": "E910",
+    "description": "Esters de cires"
+  },
+  {
+    "additif": "E543",
+    "description": "E543 food additive"
+  },
+  {
+    "additif": "E908",
+    "description": "Cire de son de riz"
+  },
+  {
+    "additif": "E161J",
+    "description": "Astaxanthine"
+  },
+  {
+    "additif": "E541I",
+    "description": "Phosphate de sodium-aluminium acide"
+  },
+  {
+    "additif": "E335II",
+    "description": "Tartrate disodique"
+  },
+  {
+    "additif": "E111",
+    "description": "Orange GGN"
+  },
+  {
+    "additif": "E496",
+    "description": "Trioléate de sorbitane"
+  },
+  {
+    "additif": "E365",
+    "description": "Fumarate de sodium"
+  },
+  {
+    "additif": "E907",
+    "description": "Poly-1-décène hydrogéné"
+  },
+  {
+    "additif": "E424",
+    "description": "Curdlan"
+  },
+  {
+    "additif": "E121",
+    "description": "Rouge citrus no.2"
+  },
+  {
+    "additif": "E1405",
+    "description": "Amidons traités aux enzymes"
+  },
+  {
+    "additif": "E478",
+    "description": "Esters lactyles d'acides gras du glycérol et du propane-1"
+  },
+  {
+    "additif": "E161C",
+    "description": "Cryptoxanthine"
+  },
+  {
+    "additif": "E919",
+    "description": "Chlorure de nitrosyle"
+  },
+  {
+    "additif": "E540",
+    "description": "Phosphate acide de calcium"
+  },
+  {
+    "additif": "E638",
+    "description": "Aspartame de sodium"
+  },
+  {
+    "additif": "E434",
+    "description": "Monopalmitate de polyoxyéthylène sorbitane"
+  },
+  {
+    "additif": "E238",
+    "description": "Formiate de calcium"
+  },
+  {
+    "additif": "E440B",
+    "description": "Pectine amidée"
+  },
+  {
+    "additif": "E160F",
+    "description": "Ester éthylique de l'acide -apocaroténique-8'"
+  },
+  {
+    "additif": "E623",
+    "description": "Diglutamate de calcium"
+  },
+  {
+    "additif": "E312",
+    "description": "Gallate dodécyle"
+  },
+  {
+    "additif": "E515II",
+    "description": "Sulfate acide de potassium"
+  }
+]

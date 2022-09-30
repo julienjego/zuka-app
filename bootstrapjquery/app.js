@@ -196,8 +196,17 @@ $(document).ready(function () {
             data.product.additives_original_tags.forEach((additive) => {
                 let add = additive.replace("en:", "").toUpperCase();
 
-                let li = $("<li>").text(add).addClass("list-group-item");
-                li.appendTo(productAdditives);
+                $.getJSON("../json/additives.json", (data) => {
+                    for (let d of data) {
+                        if (d.additif == add) {
+                            add += ` (${d.description})`;
+                            let li = $("<li>")
+                                .text(add)
+                                .addClass("list-group-item");
+                            li.appendTo(productAdditives);
+                        }
+                    }
+                });
             });
         }
     }
