@@ -190,9 +190,13 @@ $(document).ready(function () {
     function getAnalysis(data) {
         const productAnalysis = $("#analysis-labels");
 
-        productAnalysis.html("");
-        let veganLabel = $("span");
-        let vegatarianLabel = $("span");
+        let palmOilLabel = $("#palm-oil");
+        let veganLabel = $("#vegan");
+        let vegetarianLabel = $("#vegetarian");
+
+        palmOilLabel.html("");
+        veganLabel.html("");
+        vegetarianLabel.html("");
 
         if (data.product.ingredients_analysis_tags === null) {
             productAnalysis.text("Rien à afficher ici...");
@@ -200,90 +204,65 @@ $(document).ready(function () {
             // Labels huile de palme
             switch (data.product.ingredients_analysis_tags[0]) {
                 case "en:palm-oil":
-                    productAnalysis.append(
-                        $("span")
-                            .addClass("badge rounded-pill bg-danger p-3 mt-1")
-                            .text("Huile de palme")
-                    );
+                    palmOilLabel
+                        .addClass("badge rounded-pill bg-danger p-3 mt-1")
+                        .text("Huile de palme");
                     break;
                 case "en:palm-oil-free":
-                    productAnalysis.append(
-                        $("span")
-                            .addClass("badge rounded-pill bg-success p-3 mt-1")
-                            .text("Huile de palme")
-                    );
+                    palmOilLabel
+                        .addClass("badge rounded-pill bg-success p-3 mt-1")
+                        .text("Sans huile de palme");
                     break;
                 case "en:palm-oil-content-unknown":
                 case "en:may-contain-palm-oil":
                 default:
-                    productAnalysis.append(
-                        $("span")
-                            .addClass(
-                                "badge rounded-pill bg-secondary p-3 mt-1"
-                            )
-                            .text("Huile de palme")
-                    );
+                    palmOilLabel
+                        .addClass("badge rounded-pill bg-secondary p-3 mt-1")
+                        .text("Présence huile de palme inconnue");
                     break;
             }
 
-            // // Labels vegan
-            // switch (data.product.ingredients_analysis_tags[1]) {
-            //     case "en:non-vegan":
-            //         veganLabel.setAttribute("class", "red-ingredients-label");
-            //         veganLabel.innerHTML =
-            //             "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
-            //         productAnalysis.append(veganLabel);
-            //         break;
-            //     case "en:vegan":
-            //         veganLabel.setAttribute("class", "green-ingredients-label");
-            //         veganLabel.innerHTML =
-            //             "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
-            //         productAnalysis.append(veganLabel);
-            //         break;
-            //     case "en:vegan-status-unknown":
-            //     case "en:maybe-vegan":
-            //     default:
-            //         veganLabel.setAttribute(
-            //             "class",
-            //             "unknown-ingredients-label"
-            //         );
-            //         veganLabel.innerHTML = "&nbsp;Caractère vegan inconnu";
-            //         productAnalysis.append(veganLabel);
-            //         break;
-            // }
+            // Labels vegan
+            switch (data.product.ingredients_analysis_tags[1]) {
+                case "en:non-vegan":
+                    veganLabel
+                        .addClass("badge rounded-pill bg-danger p-3 mt-1")
+                        .text("Non vegan");
+                    break;
+                case "en:vegan":
+                    veganLabel
+                        .addClass("badge rounded-pill bg-success p-3 mt-1")
+                        .text("Vegan");
+                    break;
+                case "en:vegan-status-unknown":
+                case "en:maybe-vegan":
+                default:
+                    veganLabel
+                        .addClass("badge rounded-pill bg-secondary p-3 mt-1")
+                        .text("Caractère vegan inconnu");
+                    break;
+            }
 
-            // // Labels végé
-            // switch (data.product.ingredients_analysis_tags[2]) {
-            //     case "en:non-vegetarian":
-            //         vegatarianLabel.setAttribute(
-            //             "class",
-            //             "red-ingredients-label"
-            //         );
-            //         vegatarianLabel.innerHTML =
-            //             "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
-            //         productAnalysis.append(vegatarianLabel);
-            //         break;
-            //     case "en:vegetarian":
-            //         vegatarianLabel.setAttribute(
-            //             "class",
-            //             "green-ingredients-label"
-            //         );
-            //         vegatarianLabel.innerHTML =
-            //             "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
-            //         productAnalysis.append(vegatarianLabel);
-            //         break;
-            //     case "en:vegetarian-status-unknown":
-            //     case "en:maybe-vegetarian":
-            //     default:
-            //         vegatarianLabel.setAttribute(
-            //             "class",
-            //             "unknown-ingredients-label"
-            //         );
-            //         vegatarianLabel.innerHTML =
-            //             "&nbsp;Caractère végétarien inconnu";
-            //         productAnalysis.append(vegatarianLabel);
-            //         break;
-            // }
+            // Labels végé
+            switch (data.product.ingredients_analysis_tags[2]) {
+                case "en:non-vegetarian":
+                    vegetarianLabel
+                        .addClass("badge rounded-pill bg-danger p-3 mt-1")
+                        .text("Non végétarien");
+                    break;
+                case "en:vegetarian":
+                    vegetarianLabel
+                        .addClass("badge rounded-pill bg-success p-3 mt-1")
+                        .text("Végétarien");
+                    break;
+                case "en:vegetarian-status-unknown":
+                case "en:maybe-vegetarian":
+                default:
+                    vegetarianLabel
+                        .addClass("badge rounded-pill bg-secondary p-3 mt-1")
+                        .text("Caractère végétarien inconnu");
+                    break;
+            }
         }
     }
 });
