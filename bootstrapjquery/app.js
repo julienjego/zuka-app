@@ -246,6 +246,10 @@ $(document).ready(function () {
         veganLabel.html("");
         vegetarianLabel.html("");
 
+        palmOilLabel.removeClass();
+        veganLabel.removeClass();
+        vegetarianLabel.removeClass();
+
         if (data.product.ingredients_analysis_tags === null) {
             productAnalysis.text("Rien à afficher ici...");
         } else {

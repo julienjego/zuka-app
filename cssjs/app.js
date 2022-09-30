@@ -69,31 +69,37 @@ function getProductInfo(data) {
     const productImg = document.querySelector("#product-img");
     const bioLbl = document.querySelector("#bio-label");
 
-    data.product.product_name === null
-        ? (productLbl.innerHTML = "<strong>Aucun nom</strong>")
-        : (productLbl.innerHTML = `<strong>${data.product.product_name}</strong>`);
+    productLbl.innerHTML =
+        data.product.product_name === null
+            ? "<strong>Aucun nom</strong>"
+            : `<strong>${data.product.product_name}</strong>`;
 
-    data.product.quantity === null
-        ? (productQty.innerHTML = "Aucune valeur")
-        : (productQty.innerHTML = data.product.quantity);
+    productQty.innerHTML =
+        data.product.quantity === null
+            ? "Aucune valeur"
+            : data.product.quantity;
 
-    data.product.brands === null
-        ? (productBrand.innerHTML = "Aucune valeur")
-        : (productBrand.innerHTML = data.product.brands.replaceAll(",", ", "));
+    productBrand.innerHTML =
+        data.product.brands === null
+            ? "Aucune valeur"
+            : data.product.brands.replaceAll(",", ", ");
 
-    data.product.categories === null
-        ? (productCat.innerHTML = "Aucune valeur")
-        : (productCat.innerHTML = data.product.categories
-              .replaceAll("en:", "")
-              .match(/[^,.\s][^,\d]*$/));
+    productCat.innerHTML =
+        data.product.categories === null
+            ? "Aucune valeur"
+            : data.product.categories
+                  .replaceAll("en:", "")
+                  .match(/[^,.\s][^,\d]*$/);
 
-    data.product.image_front_url === null
-        ? (productImg.src = "../img/placeholder.png")
-        : (productImg.src = data.product.image_front_url);
+    productImg.src =
+        data.product.image_front_url === null
+            ? "../img/placeholder.png"
+            : data.product.image_front_url;
 
-    data.product.labels != null && data.product.labels.includes("Bio")
-        ? (bioLbl.style.display = "inline-block")
-        : (bioLbl.style.display = "none");
+    bioLbl.style.display =
+        data.product.labels != null && data.product.labels.includes("Bio")
+            ? "inline-block"
+            : "none";
 }
 
 // On récupère les scores et on affiche les bonnes images
