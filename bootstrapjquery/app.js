@@ -1,8 +1,49 @@
 $(document).ready(function () {
-    $("#btn-search").click(() => {
-        $.getJSON(
-            "https://fr.openfoodfacts.org/api/v0/product/3046920022606.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity",
-            (data) => {
+    $("#alert-box").css("display", "none");
+
+    $("#bar-search").keydown(function (e) {
+        e = e || window.event;
+        if (e.which === 13 || e.keyCode === 13) {
+            e.preventDefault();
+            console.log("enter search");
+        }
+    });
+
+    $("#btn-search").click(doSearch);
+    $("#btn-random-search").click(doRandomSearch);
+
+    // Va chercher un produit parmi la liste de manière aléatoire
+    function doRandomSearch() {
+        const randomProducts = [
+            "3760020507350",
+            "3155250358788",
+            "3033710065967",
+            "7622210713780",
+            "3228857000852",
+            "3268840001008",
+            "3046920022606",
+            "7613035989535",
+        ];
+
+        let rndInt = Math.floor(Math.random() * randomProducts.length);
+        let url = `https://fr.openfoodfacts.org/api/v0/product/${randomProducts[rndInt]}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
+        fetchIt(url);
+    }
+
+    // Lance la recherche depuis le bouton "Rechercher"
+    function doSearch() {
+        let productCode = $("#bar-search").val();
+        let url = `https://fr.openfoodfacts.org/api/v0/product/${productCode}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
+        fetchIt(url);
+    }
+
+    // On effectue la requête avec l'url du random ou la recherche classique
+    function fetchIt(url) {
+        $.getJSON(url, (data) => {
+            if (data.status === 0) {
+                $("#alert-box").css("display", "block");
+            } else {
+                $("#alert-box").css("display", "none");
                 console.log(data);
                 getProductInfo(data);
                 getScores(data);
@@ -10,9 +51,10 @@ $(document).ready(function () {
                 getAdditives(data);
                 getAllergens(data);
                 getAnalysis(data);
+                getNutriments(data);
             }
-        );
-    });
+        });
+    }
 
     // On récupère les infos  pour la section "Le produit"
     function getProductInfo(data) {
@@ -174,7 +216,6 @@ $(document).ready(function () {
             );
         } else {
             let allergen = data.product.allergens.split(",");
-            console.log(allergen);
             allergen.forEach(function (aller) {
                 let al = aller.replace("en:", "");
                 let alCap = al.charAt(0).toUpperCase() + al.slice(1);
@@ -183,8 +224,6 @@ $(document).ready(function () {
             });
         }
     }
-
-    //TODO régler ce bordel
 
     // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
     function getAnalysis(data) {
@@ -263,6 +302,64 @@ $(document).ready(function () {
                         .text("Caractère végétarien inconnu");
                     break;
             }
+        }
+    }
+
+    // On récupère les infos pour le tableau "Repères nutritionnels"
+    function getNutriments(data) {
+        const nbFormat = new Intl.NumberFormat("fr-FR");
+
+        const nutriEnergy = $("#energy");
+        const nutriFat = $("#fat");
+        const nutriSatFat = $("#saturated-fat");
+        const nutriSugar = $("#sugar");
+        const nutriSalt = $("#salt");
+
+        if (Object.keys(data.product.nutriments).length === 0) {
+            nutriEnergy.text("?");
+            nutriFat.text("?");
+            nutriSatFat.text("?");
+            nutriSugar.text("?");
+            nutriSalt.text("?");
+        } else {
+            nutriEnergy.html(
+                nbFormat.format(data.product.nutriments["energy-kcal_100g"]) +
+                    " kcal"
+            );
+            nutriFat.html(
+                nbFormat.format(data.product.nutriments.fat_100g) +
+                    " g " +
+                    getNutrimentLevel(data, "fat")
+            );
+            nutriSatFat.html(
+                nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
+                    " g " +
+                    getNutrimentLevel(data, "saturated-fat")
+            );
+            nutriSugar.html(
+                nbFormat.format(data.product.nutriments.sugars_100g) +
+                    " g " +
+                    getNutrimentLevel(data, "sugars")
+            );
+            nutriSalt.html(
+                nbFormat.format(data.product.nutriments.salt_100g) +
+                    " g " +
+                    getNutrimentLevel(data, "salt")
+            );
+        }
+    }
+
+    // On récupère les niveaux de nutriments et on affiche des emojis suivant le niveau
+    function getNutrimentLevel(data, nutri) {
+        switch (data.product.nutrient_levels[nutri]) {
+            case "low":
+                return "&#x1F600;";
+            case "moderate":
+                return "&#x1F610;";
+            case "high":
+                return "&#x1F629;";
+            default:
+                return "";
         }
     }
 });

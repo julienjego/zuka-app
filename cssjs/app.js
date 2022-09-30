@@ -1,4 +1,3 @@
-const nbFormat = new Intl.NumberFormat("fr-FR");
 const searchBox = document.querySelector("#bar-search");
 const searchBtn = document.querySelector("#btn-search");
 const randomBtn = document.querySelector("#btn-random-search");
@@ -50,7 +49,6 @@ function fetchIt(url) {
                 alertBox.style.display = "block";
             } else {
                 alertBox.style.display = "none";
-                console.log(data);
                 getProductInfo(data);
                 getScores(data);
                 getIngredients(data);
@@ -206,17 +204,12 @@ function getAdditives(data) {
 function getAllergens(data) {
     const productAllergens = document.querySelector("#allergens");
 
-    if (
-        data.product.allergens === null ||
-        data.product.allergens.length === 0
-    ) {
-        productAllergens.innerHTML = "aucun allergène connu dans ce produit";
-    } else {
-        productAllergens.innerHTML = data.product.allergens.replaceAll(
-            "en:",
-            ""
-        );
-    }
+    data.product.allergens === null || data.product.allergens.length === 0
+        ? (productAllergens.innerHTML = "aucun allergène connu dans ce produit")
+        : (productAllergens.innerHTML = data.product.allergens.replaceAll(
+              "en:",
+              ""
+          ));
 }
 
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
@@ -312,6 +305,8 @@ function getAnalysis(data) {
 
 // On récupère les infos pour le tableau "Repères nutritionnels"
 function getNutriments(data) {
+    const nbFormat = new Intl.NumberFormat("fr-FR");
+
     const nutriEnergy = document.querySelector("#energy");
     const nutriFat = document.querySelector("#fat");
     const nutriSatFat = document.querySelector("#saturated-fat");
