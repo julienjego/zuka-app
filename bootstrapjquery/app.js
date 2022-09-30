@@ -1,11 +1,12 @@
 $(document).ready(function () {
     $("#alert-box").css("display", "none");
+    $("#bio-label").css("display", "none");
 
     $("#bar-search").keydown(function (e) {
         e = e || window.event;
         if (e.which === 13 || e.keyCode === 13) {
             e.preventDefault();
-            console.log("enter search");
+            doSearch();
         }
     });
 
@@ -39,21 +40,27 @@ $(document).ready(function () {
 
     // On effectue la requête avec l'url du random ou la recherche classique
     function fetchIt(url) {
-        $.getJSON(url, (data) => {
-            if (data.status === 0) {
-                $("#alert-box").css("display", "block");
-            } else {
-                $("#alert-box").css("display", "none");
-                console.log(data);
-                getProductInfo(data);
-                getScores(data);
-                getIngredients(data);
-                getAdditives(data);
-                getAllergens(data);
-                getAnalysis(data);
-                getNutriments(data);
-            }
-        });
+        const loader = $(
+            "<img src='../img/loader.gif' alt='chargement' class='d-block mx-auto'>"
+        ).appendTo($("#error-panel"));
+        $.getJSON(url)
+            .done((data) => {
+                if (data.status === 0) {
+                    $("#alert-box").css("display", "block");
+                } else {
+                    $("#alert-box").css("display", "none");
+                    getProductInfo(data);
+                    getScores(data);
+                    getIngredients(data);
+                    getAdditives(data);
+                    getAllergens(data);
+                    getAnalysis(data);
+                    getNutriments(data);
+                }
+            })
+            .always(() => {
+                loader.remove();
+            });
     }
 
     // On récupère les infos  pour la section "Le produit"
@@ -65,33 +72,45 @@ $(document).ready(function () {
         const productImg = $("#product-img");
         const bioLbl = $("#bio-label");
 
-        data.product.product_name === null
-            ? productLbl.html("<strong>Aucun nom</strong>")
-            : productLbl.html(`<strong>${data.product.product_name}</strong>`);
+        productLbl.html(
+            data.product.product_name === null
+                ? "<strong>Aucun nom</strong>"
+                : `<strong>${data.product.product_name}</strong>`
+        );
 
-        data.product.quantity === null
-            ? productQty.html("Aucune valeur")
-            : productQty.html(data.product.quantity);
+        productQty.html(
+            data.product.quantity === null
+                ? "Aucune valeur"
+                : data.product.quantity
+        );
 
-        data.product.brands === null
-            ? productBrand.html("Aucune valeur")
-            : productBrand.html(data.product.brands.replaceAll(",", ", "));
+        productBrand.html(
+            data.product.brands === null
+                ? "Aucune valeur"
+                : data.product.brands.replaceAll(",", ", ")
+        );
 
-        data.product.categories === null
-            ? productCat.html("Aucune valeur")
-            : productCat.html(
-                  data.product.categories
+        productCat.html(
+            data.product.categories === null
+                ? "Aucune valeur"
+                : data.product.categories
                       .replaceAll("en:", "")
                       .match(/[^,.\s][^,\d]*$/)
-              );
+        );
 
-        data.product.image_front_url === null
-            ? productImg.attr("src", "../img/placeholder.png")
-            : productImg.attr("src", data.product.image_front_url);
+        productImg.attr(
+            "src",
+            data.product.image_front_url === null
+                ? "../img/placeholder.png"
+                : data.product.image_front_url
+        );
 
-        data.product.labels != null && data.product.labels.includes("Bio")
-            ? bioLbl.css("display", "inline-block")
-            : bioLbl.css("display", "none");
+        bioLbl.css(
+            "display",
+            data.product.labels != null && data.product.labels.includes("Bio")
+                ? "inline-block"
+                : "none"
+        );
     }
 
     // On récupère les scores et on affiche les bonnes images
@@ -120,6 +139,7 @@ $(document).ready(function () {
             default:
                 ecoScore.attr("src", "../img/ecoscore-na.svg");
         }
+
         // Obtenir et modifier le nutriscore
         switch (data.product.nutriscore_grade) {
             case "a":

@@ -221,6 +221,11 @@ a:visited {
     display: none;
 }
 
+#sec-nutrition > p {
+    width: 70%;
+    margin: auto;
+}
+
 footer {
     width: 100%;
     display: flex;
@@ -268,6 +273,10 @@ footer > p {
         width: 100%;
     }
 
+    #sec-nutrition > p {
+        width: 100%;
+    }
+
     #analysis-labels {
         flex-direction: column;
     }
@@ -304,6 +313,10 @@ footer > p {
         width: 100%;
     }
 
+    #sec-nutrition > p {
+        width: 100%;
+    }
+
     #analysis-labels {
         flex-direction: column;
     }
@@ -337,6 +350,10 @@ footer > p {
     }
 
     #sec-nutrition > table {
+        width: 100%;
+    }
+
+    #sec-nutrition > p {
         width: 100%;
     }
 

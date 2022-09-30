@@ -210,12 +210,10 @@ function getAdditives(data) {
 function getAllergens(data) {
     const productAllergens = document.querySelector("#allergens");
 
-    data.product.allergens === null || data.product.allergens.length === 0
-        ? (productAllergens.innerHTML = "aucun allergène connu dans ce produit")
-        : (productAllergens.innerHTML = data.product.allergens.replaceAll(
-              "en:",
-              ""
-          ));
+    productAllergens.innerHTML =
+        data.product.allergens === null || data.product.allergens.length === 0
+            ? "aucun allergène connu dans ce produit"
+            : data.product.allergens.replaceAll("en:", "");
 }
 
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
