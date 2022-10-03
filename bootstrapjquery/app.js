@@ -119,63 +119,31 @@ $(document).ready(function () {
         const nutriScore = $("#nutriscore");
         const novaScore = $("#novascore");
 
-        // Obtenir et modifier l'éco-score
-        switch (data.product.ecoscore_grade) {
-            case "a":
-                ecoScore.attr("src", "../img/ecoscore-a.svg");
-                break;
-            case "b":
-                ecoScore.attr("src", "../img/ecoscore-b.svg");
-                break;
-            case "c":
-                ecoScore.attr("src", "../img/ecoscore-c.svg");
-                break;
-            case "d":
-                ecoScore.attr("src", "../img/ecoscore-d.svg");
-                break;
-            case "e":
-                ecoScore.attr("src", "../img/ecoscore-e.svg");
-                break;
-            default:
-                ecoScore.attr("src", "../img/ecoscore-na.svg");
+        if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
+            ecoScore.attr(
+                "src",
+                "../img/ecoscore-" + data.product.ecoscore_grade + ".svg"
+            );
+        } else {
+            ecoScore.attr("src", "../img/ecoscore-na.svg");
         }
 
-        // Obtenir et modifier le nutriscore
-        switch (data.product.nutriscore_grade) {
-            case "a":
-                nutriScore.attr("src", "../img/nutriscore-a.svg");
-                break;
-            case "b":
-                nutriScore.attr("src", "../img/nutriscore-b.svg");
-                break;
-            case "c":
-                nutriScore.attr("src", "../img/nutriscore-c.svg");
-                break;
-            case "d":
-                nutriScore.attr("src", "../img/nutriscore-d.svg");
-                break;
-            case "e":
-                nutriScore.attr("src", "../img/nutriscore-e.svg");
-                break;
-            default:
-                nutriScore.attr("src", "../img/nutriscore-na.svg");
+        if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
+            nutriScore.attr(
+                "src",
+                "../img/nutriscore-" + data.product.nutriscore_grade + ".svg"
+            );
+        } else {
+            nutriScore.attr("src", "../img/nutri-na.svg");
         }
-        // Obtenir et modifier le score nova
-        switch (data.product.nova_group) {
-            case 1:
-                novaScore.attr("src", "../img/nova-1.svg");
-                break;
-            case 2:
-                novaScore.attr("src", "../img/nova-2.svg");
-                break;
-            case 3:
-                novaScore.attr("src", "../img/nova-3.svg");
-                break;
-            case 4:
-                novaScore.attr("src", "../img/nova-4.svg");
-                break;
-            default:
-                novaScore.attr("src", "../img/nova-na.svg");
+
+        if (!isNaN(data.product.nova_group)) {
+            novaScore.attr(
+                "src",
+                "../img/nova-" + data.product.nova_group + ".svg"
+            );
+        } else {
+            novaScore.attr("src", "../img/nova-na.svg");
         }
     }
 

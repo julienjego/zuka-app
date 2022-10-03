@@ -108,62 +108,24 @@ function getScores(data) {
     const nutriScore = document.querySelector("#nutriscore");
     const novaScore = document.querySelector("#novascore");
 
-    // Obtenir et modifier l'éco-score
-    switch (data.product.ecoscore_grade) {
-        case "a":
-            ecoScore.src = "../img/ecoscore-a.svg";
-            break;
-        case "b":
-            ecoScore.src = "../img/ecoscore-b.svg";
-            break;
-        case "c":
-            ecoScore.src = "../img/ecoscore-c.svg";
-            break;
-        case "d":
-            ecoScore.src = "../img/ecoscore-d.svg";
-            break;
-        case "e":
-            ecoScore.src = "../img/ecoscore-e.svg";
-            break;
-        default:
-            ecoScore.src = "../img/ecoscore-na.svg";
+    if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
+        ecoScore.src =
+            "../img/ecoscore-" + data.product.ecoscore_grade + ".svg";
+    } else {
+        ecoScore.src = "../img/ecoscore-na.svg";
     }
-    // Obtenir et modifier le nutriscore
-    switch (data.product.nutriscore_grade) {
-        case "a":
-            nutriScore.src = "../img/nutriscore-a.svg";
-            break;
-        case "b":
-            nutriScore.src = "../img/nutriscore-b.svg";
-            break;
-        case "c":
-            nutriScore.src = "../img/nutriscore-c.svg";
-            break;
-        case "d":
-            nutriScore.src = "../img/nutriscore-d.svg";
-            break;
-        case "e":
-            nutriScore.src = "../img/nutriscore-e.svg";
-            break;
-        default:
-            nutriScore.src = "../img/nutriscore-na.svg";
+
+    if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
+        nutriScore.src =
+            "../img/nutriscore-" + data.product.nutriscore_grade + ".svg";
+    } else {
+        nutriScore.src = "../img/nutri-na.svg";
     }
-    // Obtenir et modifier le score nova
-    switch (data.product.nova_group) {
-        case 1:
-            novaScore.src = "../img/nova-1.svg";
-            break;
-        case 2:
-            novaScore.src = "../img/nova-2.svg";
-            break;
-        case 3:
-            novaScore.src = "../img/nova-3.svg";
-            break;
-        case 4:
-            novaScore.src = "../img/nova-4.svg";
-            break;
-        default:
-            novaScore.src = "../img/nova-na.svg";
+
+    if (!isNaN(data.product.nova_group)) {
+        novaScore.src = "../img/nova-" + data.product.nova_group + ".svg";
+    } else {
+        novaScore.src = "../img/nova-na.svg";
     }
 }
 
