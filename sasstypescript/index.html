@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Une petite webapp pour savoir koikonbouf."
+        />
+        <title>Zuka - HTML / CSS / JS</title>
+        <link rel="stylesheet" href="dist/style.css" type="text/css" />
+        <link rel="icon" type="image/png" href="../img/watermelon.png" />
+    </head>
+    <body>
+        <header><h1>&#x1F349;Zuka, le yuka du futur</h1></header>
+        <main>
+            <section>
+                <form id="search-form">
+                    <label for="bar-search">Rechercher un produit</label><br />
+                    <input
+                        type="tel"
+                        name="bar-search"
+                        id="bar-search"
+                        placeholder="Par ex : 7622210713780"
+                        maxlength="13"
+                        required
+                    />
+                    <input
+                        type="button"
+                        id="btn-search"
+                        class="buttons"
+                        value="Rechercher"
+                    />
+                    <input
+                        type="button"
+                        id="btn-random-search"
+                        class="buttons"
+                        value="Un produit au hasard"
+                    />
+                </form>
+                <div id="alert-box">
+                    <p>
+                        Hum... Il semblerait que ce produit ne soit pas reconnu,
+                        réessayez avec un autre code !
+                    </p>
+                </div>
+            </section>
+
+            <section id="product-card">
+                <section id="sec-product">
+                    <h2>Le produit</h2>
+                    <div class="product">
+                        <img
+                            src="../img/placeholder.png"
+                            alt="photo-produit"
+                            id="product-img"
+                        />
+                        <div id="description">
+                            <p id="product-name">Nom</p>
+                            <p>
+                                Quantité : <span id="product-quantity"></span>
+                            </p>
+                            <p>Marque(s) : <span id="product-brand"></span></p>
+                            <p>
+                                Catégorie : <span id="product-category"></span>
+                            </p>
+                            <p>
+                                <span id="bio-label">&#x25CF; Produit Bio</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section id="sec-scores">
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/nutriscore"
+                            target="_blank"
+                            rel="noopener"
+                            ><img
+                                src="../img/nutriscore-na.svg"
+                                alt="nutriscore"
+                                id="nutriscore"
+                        /></a>
+                    </div>
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/nova"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="../img/nova-na.svg"
+                                alt="novascore"
+                                id="novascore"
+                            />
+                        </a>
+                    </div>
+                    <div class="score">
+                        <a
+                            href="https://fr.openfoodfacts.org/eco-score-l-impact-environnemental-des-produits-alimentaires"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="../img/ecoscore-na.svg"
+                                alt="ecoscore"
+                                id="ecoscore"
+                            />
+                        </a>
+                    </div>
+                </section>
+            </section>
+
+            <section id="sec-ingredients">
+                <h2>Les ingrédients</h2>
+                <p id="list-ingredients"></p>
+
+                <p>
+                    <strong>Allergènes :</strong> <span id="allergens"></span>
+                </p>
+
+                <h3>Additifs</h3>
+                <div id="additives"></div>
+
+                <h3>Analyse des ingrédients</h3>
+                <div id="analysis-labels"></div>
+            </section>
+            <section id="sec-nutrition">
+                <h2>Repères nutritionnels</h2>
+                <table>
+                    <caption>
+                        Repères nutritionnels
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Information</th>
+                            <th>Pour 100g</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Calories</td>
+                            <td id="energy"></td>
+                        </tr>
+                        <tr>
+                            <td>Matières grasses</td>
+                            <td id="fat"></td>
+                        </tr>
+                        <tr>
+                            <td>Acides gras saturés</td>
+                            <td id="saturated-fat"></td>
+                        </tr>
+                        <tr>
+                            <td>Sucre</td>
+                            <td id="sugar"></td>
+                        </tr>
+                        <tr>
+                            <td>Sel</td>
+                            <td id="salt"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <small>
+                        <strong>Quantité :</strong> &#x1F600;: basse &#x1F610;:
+                        modérée &#x1F629;: elévée.
+                    </small>
+                </p>
+            </section>
+        </main>
+        <footer>
+            <p>Zuka, le yuka du futur</p>
+            <p>Made with &#x2665; by Julien Jégo @ Afpa Beaumont - 2022</p>
+            <p>
+                <a
+                    href="https://www.disclaimergenerator.net/live.php?token=7STjGcIhubC5YRApw4s6DhgCx86hVZGA"
+                    target="_blank"
+                    rel="noopener"
+                    >Mentions légales</a
+                >
+            </p>
+        </footer>
+        <script src="dist/app.js"></script>
+    </body>
+</html>
