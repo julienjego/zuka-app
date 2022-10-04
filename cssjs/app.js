@@ -68,35 +68,30 @@ function getProductInfo(data) {
     const productImg = document.querySelector("#product-img");
     const bioLbl = document.querySelector("#bio-label");
 
-    productLbl.innerHTML =
-        data.product.product_name === null
-            ? "<strong>Aucun nom</strong>"
-            : `<strong>${data.product.product_name}</strong>`;
+    productLbl.innerHTML = !data.product.product_name
+        ? "<strong>Aucun nom</strong>"
+        : `<strong>${data.product.product_name}</strong>`;
 
-    productQty.innerHTML =
-        data.product.quantity === null
-            ? "Aucune valeur"
-            : data.product.quantity;
+    productQty.innerHTML = !data.product.quantity
+        ? "Aucune valeur"
+        : data.product.quantity;
 
-    productBrand.innerHTML =
-        data.product.brands === null
-            ? "Aucune valeur"
-            : data.product.brands.replaceAll(",", ", ");
+    productBrand.innerHTML = !data.product.brands
+        ? "Aucune valeur"
+        : data.product.brands.replaceAll(",", ", ");
 
-    productCat.innerHTML =
-        data.product.categories === null
-            ? "Aucune valeur"
-            : data.product.categories
-                  .replaceAll("en:", "")
-                  .match(/[^,.\s][^,\d]*$/);
+    productCat.innerHTML = !data.product.categories
+        ? "Aucune valeur"
+        : data.product.categories
+              .replaceAll("en:", "")
+              .match(/[^,.\s][^,\d]*$/);
 
-    productImg.src =
-        data.product.image_front_url === null
-            ? "../img/placeholder.png"
-            : data.product.image_front_url;
+    productImg.src = !data.product.image_front_url
+        ? "../img/placeholder.png"
+        : data.product.image_front_url;
 
     bioLbl.style.display =
-        data.product.labels != null && data.product.labels.includes("Bio")
+        data.product.labels && data.product.labels.includes("Bio")
             ? "inline-block"
             : "none";
 }
@@ -107,21 +102,27 @@ function getScores(data) {
     const nutriScore = document.querySelector("#nutriscore");
     const novaScore = document.querySelector("#novascore");
 
-    if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
+    if (!data.product.ecoscore_grade) {
+        ecoScore.src = "../img/ecoscore-na.svg";
+    } else if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
         ecoScore.src =
             "../img/ecoscore-" + data.product.ecoscore_grade + ".svg";
     } else {
         ecoScore.src = "../img/ecoscore-na.svg";
     }
 
-    if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
+    if (!data.product.nutriscore_grade) {
+        nutriScore.src = "../img/nutriscore-na.svg";
+    } else if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
         nutriScore.src =
             "../img/nutriscore-" + data.product.nutriscore_grade + ".svg";
     } else {
         nutriScore.src = "../img/nutri-na.svg";
     }
 
-    if (!isNaN(data.product.nova_group)) {
+    if (!data.product.nova_group) {
+        novaScore.src = "../img/nova-na.svg";
+    } else if (!isNaN(data.product.nova_group)) {
         novaScore.src = "../img/nova-" + data.product.nova_group + ".svg";
     } else {
         novaScore.src = "../img/nova-na.svg";
@@ -152,7 +153,7 @@ function getAdditives(data) {
 
     productAdditives.innerHTML = "";
     if (
-        data.product.additives_original_tags === null ||
+        !data.product.additives_original_tags ||
         data.product.additives_original_tags.length === 0
     ) {
         productAdditives.innerHTML = "Aucun additif connu dans ce produit";
@@ -172,7 +173,7 @@ function getAllergens(data) {
     const productAllergens = document.querySelector("#allergens");
 
     productAllergens.innerHTML =
-        data.product.allergens === null || data.product.allergens.length === 0
+        !data.product.allergens || data.product.allergens.length === 0
             ? "aucun allergène connu dans ce produit"
             : data.product.allergens.replaceAll("en:", "");
 }
@@ -186,7 +187,7 @@ function getAnalysis(data) {
     let veganLabel = document.createElement("div");
     let vegatarianLabel = document.createElement("div");
 
-    if (data.product.ingredients_analysis_tags === null) {
+    if (!data.product.ingredients_analysis_tags) {
         productAnalysis.innerHTML = "Rien à afficher ici...";
     } else {
         // Labels huile de palme
@@ -285,25 +286,30 @@ function getNutriments(data) {
         nutriSugar.innerHTML = "?";
         nutriSalt.innerHTML = "?";
     } else {
-        nutriEnergy.innerHTML =
-            nbFormat.format(data.product.nutriments["energy-kcal_100g"]) +
-            " kcal";
-        nutriFat.innerHTML =
-            nbFormat.format(data.product.nutriments.fat_100g) +
-            " g " +
-            getNutrimentLevel(data, "fat");
-        nutriSatFat.innerHTML =
-            nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
-            " g " +
-            getNutrimentLevel(data, "saturated-fat");
-        nutriSugar.innerHTML =
-            nbFormat.format(data.product.nutriments.sugars_100g) +
-            " g " +
-            getNutrimentLevel(data, "sugars");
-        nutriSalt.innerHTML =
-            nbFormat.format(data.product.nutriments.salt_100g) +
-            " g " +
-            getNutrimentLevel(data, "salt");
+        nutriEnergy.innerHTML = !data.product.nutriments["energy-kcal_100g"]
+            ? "?"
+            : nbFormat.format(data.product.nutriments["energy-kcal_100g"]) +
+              " kcal";
+        nutriFat.innerHTML = !data.product.nutriments.fat_100g
+            ? "?"
+            : nbFormat.format(data.product.nutriments.fat_100g) +
+              " g " +
+              getNutrimentLevel(data, "fat");
+        nutriSatFat.innerHTML = !data.product.nutriments["saturated-fat_100g"]
+            ? "?"
+            : nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
+              " g " +
+              getNutrimentLevel(data, "saturated-fat");
+        nutriSugar.innerHTML = !data.product.nutriments.sugars_100g
+            ? "?"
+            : nbFormat.format(data.product.nutriments.sugars_100g) +
+              " g " +
+              getNutrimentLevel(data, "sugars");
+        nutriSalt.innerHTML = !data.product.nutriments.salt_100g
+            ? "?"
+            : nbFormat.format(data.product.nutriments.salt_100g) +
+              " g " +
+              getNutrimentLevel(data, "salt");
     }
 }
 

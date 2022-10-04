@@ -72,25 +72,23 @@ $(document).ready(function () {
         const bioLbl = $("#bio-label");
 
         productLbl.html(
-            data.product.product_name === null
+            !data.product.product_name
                 ? "<strong>Aucun nom</strong>"
                 : `<strong>${data.product.product_name}</strong>`
         );
 
         productQty.html(
-            data.product.quantity === null
-                ? "Aucune valeur"
-                : data.product.quantity
+            !data.product.quantity ? "Aucune valeur" : data.product.quantity
         );
 
         productBrand.html(
-            data.product.brands === null
+            !data.product.brands
                 ? "Aucune valeur"
                 : data.product.brands.replaceAll(",", ", ")
         );
 
         productCat.html(
-            data.product.categories === null
+            !data.product.categories
                 ? "Aucune valeur"
                 : data.product.categories
                       .replaceAll("en:", "")
@@ -99,14 +97,14 @@ $(document).ready(function () {
 
         productImg.attr(
             "src",
-            data.product.image_front_url === null
+            !data.product.image_front_url
                 ? "../img/placeholder.png"
                 : data.product.image_front_url
         );
 
         bioLbl.css(
             "display",
-            data.product.labels != null && data.product.labels.includes("Bio")
+            data.product.labels && data.product.labels.includes("Bio")
                 ? "inline-block"
                 : "none"
         );
@@ -118,7 +116,9 @@ $(document).ready(function () {
         const nutriScore = $("#nutriscore");
         const novaScore = $("#novascore");
 
-        if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
+        if (!data.product.ecoscore_grade) {
+            ecoScore.attr("src", "../img/ecoscore-na.svg");
+        } else if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
             ecoScore.attr(
                 "src",
                 "../img/ecoscore-" + data.product.ecoscore_grade + ".svg"
@@ -127,16 +127,20 @@ $(document).ready(function () {
             ecoScore.attr("src", "../img/ecoscore-na.svg");
         }
 
-        if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
+        if (!data.product.nutriscore_grade) {
+            nutriScore.attr("src", "../img/nutriscore-na.svg");
+        } else if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
             nutriScore.attr(
                 "src",
                 "../img/nutriscore-" + data.product.nutriscore_grade + ".svg"
             );
         } else {
-            nutriScore.attr("src", "../img/nutri-na.svg");
+            nutriScore.attr("src", "../img/nutriscore-na.svg");
         }
 
-        if (!isNaN(data.product.nova_group)) {
+        if (!data.product.nova_group) {
+            novaScore.attr("src", "../img/nova-na.svg");
+        } else if (!isNaN(data.product.nova_group)) {
             novaScore.attr(
                 "src",
                 "../img/nova-" + data.product.nova_group + ".svg"
@@ -173,7 +177,7 @@ $(document).ready(function () {
 
         productAdditives.html("");
         if (
-            data.product.additives_original_tags === null ||
+            !data.product.additives_original_tags ||
             data.product.additives_original_tags.length === 0
         ) {
             $(
@@ -203,10 +207,7 @@ $(document).ready(function () {
         const productAllergens = $("#allergens");
 
         productAllergens.html("");
-        if (
-            data.product.allergens === null ||
-            data.product.allergens.length === 0
-        ) {
+        if (!data.product.allergens || data.product.allergens.length === 0) {
             productAllergens.append(
                 "<li class='list-group-item'>Aucun allergène connu dans ce produit</li>"
             );
@@ -237,7 +238,7 @@ $(document).ready(function () {
         veganLabel.removeClass();
         vegetarianLabel.removeClass();
 
-        if (data.product.ingredients_analysis_tags === null) {
+        if (!data.product.ingredients_analysis_tags) {
             productAnalysis.text("Rien à afficher ici...");
         } else {
             // Labels huile de palme
@@ -323,28 +324,41 @@ $(document).ready(function () {
             nutriSalt.text("?");
         } else {
             nutriEnergy.html(
-                nbFormat.format(data.product.nutriments["energy-kcal_100g"]) +
-                    " kcal"
+                !data.product.nutriments["energy-kcal_100g"]
+                    ? "?"
+                    : nbFormat.format(
+                          data.product.nutriments["energy-kcal_100g"]
+                      ) + " kcal"
             );
             nutriFat.html(
-                nbFormat.format(data.product.nutriments.fat_100g) +
-                    " g " +
-                    getNutrimentLevel(data, "fat")
+                !data.product.nutriments.fat_100g
+                    ? "?"
+                    : nbFormat.format(data.product.nutriments.fat_100g) +
+                          " g " +
+                          getNutrimentLevel(data, "fat")
             );
             nutriSatFat.html(
-                nbFormat.format(data.product.nutriments["saturated-fat_100g"]) +
-                    " g " +
-                    getNutrimentLevel(data, "saturated-fat")
+                !data.product.nutriments["saturated-fat_100g"]
+                    ? "?"
+                    : nbFormat.format(
+                          data.product.nutriments["saturated-fat_100g"]
+                      ) +
+                          " g " +
+                          getNutrimentLevel(data, "saturated-fat")
             );
             nutriSugar.html(
-                nbFormat.format(data.product.nutriments.sugars_100g) +
-                    " g " +
-                    getNutrimentLevel(data, "sugars")
+                !data.product.nutriments.sugars_100g
+                    ? "?"
+                    : nbFormat.format(data.product.nutriments.sugars_100g) +
+                          " g " +
+                          getNutrimentLevel(data, "sugars")
             );
             nutriSalt.html(
-                nbFormat.format(data.product.nutriments.salt_100g) +
-                    " g " +
-                    getNutrimentLevel(data, "salt")
+                !data.product.nutriments.salt_100g
+                    ? "?"
+                    : nbFormat.format(data.product.nutriments.salt_100g) +
+                          " g " +
+                          getNutrimentLevel(data, "salt")
             );
         }
     }
