@@ -6,8 +6,7 @@ searchBtn.addEventListener("click", doSearch, false);
 randomBtn.addEventListener("click", doRandomSearch, false);
 
 searchBox.onkeydown = function (e) {
-    e = e || window.event;
-    if (e.which === 13 || e.keyCode === 13) {
+    if (e.key === "Enter") {
         e.preventDefault();
         doSearch();
     }

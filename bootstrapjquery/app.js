@@ -3,8 +3,7 @@ $(document).ready(function () {
     $("#bio-label").css("display", "none");
 
     $("#bar-search").keydown(function (e) {
-        e = e || window.event;
-        if (e.which === 13 || e.keyCode === 13) {
+        if (e.key === "Enter") {
             e.preventDefault();
             doSearch();
         }
