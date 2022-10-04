@@ -48,35 +48,30 @@ function getProductInfo(data: any) {
     const productImg = <HTMLImageElement>document.querySelector("#product-img");
     const bioLbl = <HTMLSpanElement>document.querySelector("#bio-label");
 
-    productLbl.innerHTML =
-        data.product.product_name === null
-            ? "<strong>Aucun nom</strong>"
-            : `<strong>${data.product.product_name}</strong>`;
+    productLbl.innerHTML = !data.product.product_name
+        ? "<strong>Aucun nom</strong>"
+        : `<strong>${data.product.product_name}</strong>`;
 
-    productQty.innerHTML =
-        data.product.quantity === null
-            ? "Aucune valeur"
-            : data.product.quantity;
+    productQty.innerHTML = !data.product.quantity
+        ? "Aucune valeur"
+        : data.product.quantity;
 
-    productBrand.innerHTML =
-        data.product.brands === null
-            ? "Aucune valeur"
-            : data.product.brands.replaceAll(",", ", ");
+    productBrand.innerHTML = !data.product.brands
+        ? "Aucune valeur"
+        : data.product.brands.replaceAll(",", ", ");
 
-    productCat.innerHTML =
-        data.product.categories === null
-            ? "Aucune valeur"
-            : data.product.categories
-                  .replaceAll("en:", "")
-                  .match(/[^,.\s][^,\d]*$/);
+    productCat.innerHTML = !data.product.categories
+        ? "Aucune valeur"
+        : data.product.categories
+              .replaceAll("en:", "")
+              .match(/[^,.\s][^,\d]*$/);
 
-    productImg.src =
-        data.product.image_front_url === null
-            ? "../img/placeholder.png"
-            : data.product.image_front_url;
+    productImg.src = !data.product.image_front_url
+        ? "../img/placeholder.png"
+        : data.product.image_front_url;
 
     bioLbl.style.display =
-        data.product.labels != null && data.product.labels.includes("Bio")
+        data.product.labels && data.product.labels.includes("Bio")
             ? "inline-block"
             : "none";
 }
