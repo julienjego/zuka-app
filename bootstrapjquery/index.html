@@ -61,7 +61,43 @@
                         </button>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-4">
+                <div class="row justify-content-center mt-2">
+                    <div class="col-12 col-md-8 col-lg-6 d-grid gap-2">
+                        <button
+                            type="submit"
+                            class="btn btn-success text-nowrap btn-lg"
+                            id="btn-scan"
+                        >
+                            Scanner un produit &#x1F440;
+                        </button>
+                        <button
+                            type="submit"
+                            class="btn btn-danger text-nowrap btn-lg"
+                            id="btn-noscan"
+                        >
+                            Stopper le scan
+                        </button>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div
+                            class="alert alert-danger"
+                            role="alert"
+                            id="alert-scan"
+                        >
+                            &#128553; Hum... Aucune caméra trouvée pour scanner
+                            le produit.
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div id="reader"></div>
+                        <div id="qr-reader"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-2">
                     <div class="col-12 col-md-8 col-lg-6" id="error-panel">
                         <div
                             class="alert alert-danger"
@@ -92,10 +128,10 @@
                         </div>
                         <div class="col-6">
                             <p id="product-name">NOM</p>
+                            <p>Marque(s) : <span id="product-brand"></span></p>
                             <p>
-                                Marque(s) : <span id="product-quantity"></span>
+                                Quantité : <span id="product-quantity"></span>
                             </p>
-                            <p>Quantité : <span id="product-brand"></span></p>
                             <p>
                                 Catégorie : <span id="product-category"></span>
                             </p>
@@ -418,5 +454,6 @@
             crossorigin="anonymous"
         ></script>
         <script src="app.js"></script>
+        <script src="https://unpkg.com/html5-qrcode"></script>
     </body>
 </html>

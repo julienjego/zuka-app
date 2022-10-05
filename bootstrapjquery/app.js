@@ -1,6 +1,54 @@
 $(document).ready(function () {
     $("#alert-box").css("display", "none");
     $("#bio-label").css("display", "none");
+    $("#alert-scan").css("display", "none");
+    $("#btn-noscan").css("display", "none");
+
+    $("#btn-scan").click(startScan);
+
+    // Initialisation du lecteur de code-barre
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    function startScan() {
+        $("#btn-scan").css("display", "none");
+        $("#alert-scan").css("display", "none");
+        $("#btn-noscan").css("display", "block");
+        html5QrCode
+            .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
+
+            .catch((err) => {
+                console.log("failed : " + err);
+                $("#btn-noscan").css("display", "none");
+                $("#btn-scan").css("display", "block");
+                $("#alert-scan").css("display", "block");
+            })
+            .then($("#btn-noscan").click(stopScan));
+    }
+
+    function stopScan() {
+        html5QrCode.stop();
+        $("#btn-noscan").css("display", "none");
+        $("#btn-scan").css("display", "block");
+        $("#alert-scan").css("display", "none");
+    }
+
+    const config = {
+        fps: 10,
+        qrbox: { width: 300, height: 200 },
+        aspectRatio: { width: 350, height: 250 },
+    };
+
+    const qrCodeSuccessCallback = (decodedText) => {
+        console.log(`Code scanned = ${decodedText}`);
+        let url = `https://fr.openfoodfacts.org/api/v0/product/${decodedText}.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity`;
+        fetchIt(url);
+        html5QrCode.stop();
+        $("#btn-noscan").css("display", "none");
+        $("#btn-scan").css("display", "block");
+    };
+
+    // Appuyer sur "Entrée" pour chercher, c'est pratique
 
     $("#bar-search").keydown(function (e) {
         if (e.key === "Enter") {
@@ -37,7 +85,7 @@ $(document).ready(function () {
         fetchIt(url);
     }
 
-    // On effectue la requête avec l'url du random ou la recherche classique
+    // On effectue la requête avec l'url du random ou la recherche classique ou le scan
     function fetchIt(url) {
         const loader = $(
             "<img src='../img/loader.gif' alt='chargement' class='d-block mx-auto'>"
@@ -48,6 +96,7 @@ $(document).ready(function () {
                     $("#alert-box").css("display", "block");
                 } else {
                     $("#alert-box").css("display", "none");
+                    $("#alert-scan").css("display", "none");
                     getProductInfo(data);
                     getScores(data);
                     getIngredients(data);
