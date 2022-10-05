@@ -8,6 +8,6 @@ Trois saveurs pour une même application d'infos sur nos aliments.
 
 Le tout est cadencé grâce à l'API [Open Food Facts](https://fr.openfoodfacts.org/).
 
-TODO : ajouter la possibilité de scanner les codes-barres.
+:new: Le scan de produit est possible dans le projet `bootstrapjquery` ! [Démo par ici](https://www.julienjego.fr/lab/zuka-scan/) (c'est mieux en mobile...).
 
 _That's all folks !_
