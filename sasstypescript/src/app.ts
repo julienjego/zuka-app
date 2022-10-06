@@ -1,4 +1,5 @@
 import { getProductInfo } from "./productinfo.js";
+import { getScores } from "./productscore.js";
 
 const searchBox = document.querySelector("#bar-search");
 const searchBtn = document.querySelector("#btn-search");
@@ -21,8 +22,8 @@ function getEnter(e: KeyboardEvent): void {
 async function doSearch() {
     const alertBox = <HTMLDivElement>document.querySelector("#alert-box");
     let url =
-        "https://fr.openfoodfacts.org/api/v0/product/3460778567759.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity";
-    const response = await fetch(url);
+        "https://fr.openfoodfacts.org/api/v0/product/5449000131805.json?fields=additives_original_tags,allergens,brands,categories,ecoscore_grade,image_front_url,ingredients_analysis_tags,ingredients_text_debug,ingredients_text_fr,ingredients_text_en,labels,nova_group,nutriscore_grade,nutrient_levels,nutriments,product_name,quantity";
+    const response: Response = await fetch(url);
     const data: Response = await response.json();
 
     if (data.status === 0) {
@@ -30,5 +31,6 @@ async function doSearch() {
     } else {
         alertBox.style.display = "none";
         getProductInfo(data);
+        getScores(data);
     }
 }
