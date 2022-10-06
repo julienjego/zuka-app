@@ -2,10 +2,11 @@
 {
     "compilerOptions": {
         "outDir": "dist",
+        "rootDir": "src",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "target": "ES2015",
         "noEmitOnError": true
-    },
-    "files": ["src/app.ts"]
+    }
+    // "files": ["src/app.ts"]
 }
