@@ -5,8 +5,7 @@
         "rootDir": "src",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "target": "ES2015",
+        "target": "ES2017",
         "noEmitOnError": true
     }
-    // "files": ["src/app.ts"]
 }

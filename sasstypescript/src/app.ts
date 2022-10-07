@@ -1,5 +1,6 @@
 import { getProductInfo } from "./productinfo.js";
 import { getScores } from "./productscore.js";
+import { getAllIngredients } from "./productingredient.js";
 
 const searchBox = document.querySelector("#bar-search");
 const searchBtn = document.querySelector("#btn-search");
@@ -32,5 +33,6 @@ async function doSearch() {
         alertBox.style.display = "none";
         getProductInfo(data);
         getScores(data);
+        getAllIngredients(data);
     }
 }
