@@ -263,7 +263,7 @@ $(document).ready(function () {
         } else {
             let allergen = data.product.allergens.split(",");
             allergen.forEach(function (aller) {
-                let al = aller.replace("en:", "");
+                let al = aller.replace("en:", "").replace("fr:", "");
                 let alCap = al.charAt(0).toUpperCase() + al.slice(1);
                 let li = $("<li>").text(alCap).addClass("list-group-item");
                 li.appendTo(productAllergens);

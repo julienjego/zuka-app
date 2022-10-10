@@ -175,7 +175,9 @@ function getAllergens(data) {
     productAllergens.innerHTML =
         !data.product.allergens || data.product.allergens.length === 0
             ? "aucun allergène connu dans ce produit"
-            : data.product.allergens.replaceAll("en:", "");
+            : data.product.allergens
+                  .replaceAll("en:", "")
+                  .replaceAll("fr:", "");
 }
 
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels

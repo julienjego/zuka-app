@@ -45,7 +45,9 @@ export function getAllIngredients(data) {
     const productAllergens = (document.querySelector("#allergens"));
     const allergensText = !data.product.allergens || data.product.allergens.length === 0
         ? "aucun allergène connu dans ce produit"
-        : data.product.allergens.replaceAll("en:", "");
+        : data.product.allergens
+            .replaceAll("en:", "")
+            .replaceAll("fr:", "");
     // Affichage de l'ensemble
     const ingredients = new IngredientsList(ingredientsText(), allergensText, additivesText());
     productIngredients.innerHTML = ingredients.ingredients;
