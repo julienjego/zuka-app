@@ -47,33 +47,34 @@ export function getNutriments(data: any) {
             data.product.nutriments.salt_100g
         );
 
-        nutriEnergy.innerHTML = !productNutriments.energy
+        nutriEnergy.innerHTML = isNaN(productNutriments.energy)
             ? "?"
             : nbFormat.format(productNutriments.energy) + " kcal";
 
-        nutriFat.innerHTML = !productNutriments.fat
+        nutriFat.innerHTML = isNaN(productNutriments.fat)
             ? "?"
             : nbFormat.format(productNutriments.fat) +
               " g " +
               getNutrimentLevel(data, "fat");
 
-        nutriSatFat.innerHTML = !productNutriments.satfat
+        nutriSatFat.innerHTML = isNaN(productNutriments.satfat)
             ? "?"
             : nbFormat.format(productNutriments.satfat) +
               " g " +
               getNutrimentLevel(data, "saturated-fat");
 
-        nutriSugar.innerHTML = !productNutriments.sugar
+        nutriSugar.innerHTML = isNaN(productNutriments.sugar)
             ? "?"
             : nbFormat.format(productNutriments.sugar) +
               " g " +
               getNutrimentLevel(data, "sugars");
 
-        nutriSalt.innerHTML = !productNutriments.salt
+        nutriSalt.innerHTML = isNaN(productNutriments.salt)
             ? "?"
             : nbFormat.format(productNutriments.salt) +
               " g " +
               getNutrimentLevel(data, "salt");
+        console.log(productNutriments);
     }
 }
 
