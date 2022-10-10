@@ -33,15 +33,11 @@ export function getAllIngredients(data) {
         else {
             let additives = [];
             for (let add of data.product.additives_original_tags) {
-                let additive = document.createElement("div");
-                additive.setAttribute("class", "additive");
-                additive.innerHTML =
-                    "&#x25CF;&nbsp;" + add.replace("en:", "").toUpperCase();
-                console.log(additive);
+                let additive = "<div class='additive'>&#x25CF;&nbsp;" +
+                    add.replace("en:", "").toUpperCase() +
+                    "</div>";
                 additives.push(additive);
-                // productAdditives.appendChild(additive);
             }
-            console.log(additives);
             return additives;
         }
     };
@@ -50,13 +46,11 @@ export function getAllIngredients(data) {
     const allergensText = !data.product.allergens || data.product.allergens.length === 0
         ? "aucun allergène connu dans ce produit"
         : data.product.allergens.replaceAll("en:", "");
+    // Affichage de l'ensemble
     const ingredients = new IngredientsList(ingredientsText(), allergensText, additivesText());
-    console.log(ingredients.additives[0]);
     productIngredients.innerHTML = ingredients.ingredients;
     productAllergens.innerHTML = ingredients.allergens;
     for (let add of ingredients.additives) {
-        productAdditives.innerHTML += Object.values(add);
-        console.log("add: " + add);
+        productAdditives.innerHTML += add;
     }
-    // productAdditives.innerHTML = ()=> {ingredients.additives.forEach() };
 }

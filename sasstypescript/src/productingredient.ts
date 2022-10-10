@@ -1,12 +1,12 @@
 class IngredientsList {
     ingredients: string;
     allergens: string;
-    additives: string | HTMLDivElement[];
+    additives: string | string[];
 
     constructor(
         ingredients: string,
         allergens: string,
-        additives: string | HTMLDivElement[]
+        additives: string | string[]
     ) {
         this.ingredients = ingredients;
         this.allergens = allergens;
@@ -39,24 +39,21 @@ export function getAllIngredients(data: any) {
 
     productAdditives.innerHTML = "";
 
-    const additivesText = (): string | HTMLDivElement[] => {
+    const additivesText = (): string | string[] => {
         if (
             !data.product.additives_original_tags ||
             data.product.additives_original_tags.length === 0
         ) {
             return "Aucun additif connu dans ce produit";
         } else {
-            let additives: HTMLDivElement[] = [];
+            let additives: string[] = [];
             for (let add of data.product.additives_original_tags) {
-                let additive = document.createElement("div");
-                additive.setAttribute("class", "additive");
-                additive.innerHTML =
-                    "&#x25CF;&nbsp;" + add.replace("en:", "").toUpperCase();
-                console.log(additive);
+                let additive =
+                    "<div class='additive'>&#x25CF;&nbsp;" +
+                    add.replace("en:", "").toUpperCase() +
+                    "</div>";
                 additives.push(additive);
-                // productAdditives.appendChild(additive);
             }
-            console.log(additives);
             return additives;
         }
     };
@@ -72,18 +69,17 @@ export function getAllIngredients(data: any) {
             ? "aucun allergène connu dans ce produit"
             : data.product.allergens.replaceAll("en:", "");
 
+    // Affichage de l'ensemble
+
     const ingredients = new IngredientsList(
         ingredientsText(),
         allergensText,
         additivesText()
     );
-    console.log(ingredients.additives[0]);
+
     productIngredients.innerHTML = ingredients.ingredients;
     productAllergens.innerHTML = ingredients.allergens;
-
     for (let add of ingredients.additives) {
-        productAdditives.innerHTML += Object.values(add);
-        console.log("add: " + add);
+        productAdditives.innerHTML += add;
     }
-    // productAdditives.innerHTML = ()=> {ingredients.additives.forEach() };
 }
