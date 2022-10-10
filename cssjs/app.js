@@ -87,7 +87,7 @@ function getProductInfo(data) {
               .match(/[^,.\s][^,\d]*$/);
 
     productImg.src = !data.product.image_front_url
-        ? "../img/placeholder.png"
+        ? "/img/placeholder.png"
         : data.product.image_front_url;
 
     bioLbl.style.display =
@@ -103,29 +103,28 @@ function getScores(data) {
     const novaScore = document.querySelector("#novascore");
 
     if (!data.product.ecoscore_grade) {
-        ecoScore.src = "../img/ecoscore-na.svg";
+        ecoScore.src = "/img/ecoscore-na.svg";
     } else if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
-        ecoScore.src =
-            "../img/ecoscore-" + data.product.ecoscore_grade + ".svg";
+        ecoScore.src = "/img/ecoscore-" + data.product.ecoscore_grade + ".svg";
     } else {
-        ecoScore.src = "../img/ecoscore-na.svg";
+        ecoScore.src = "/img/ecoscore-na.svg";
     }
 
     if (!data.product.nutriscore_grade) {
-        nutriScore.src = "../img/nutriscore-na.svg";
+        nutriScore.src = "/img/nutriscore-na.svg";
     } else if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
         nutriScore.src =
-            "../img/nutriscore-" + data.product.nutriscore_grade + ".svg";
+            "/img/nutriscore-" + data.product.nutriscore_grade + ".svg";
     } else {
-        nutriScore.src = "../img/nutri-na.svg";
+        nutriScore.src = "/img/nutriscore-na.svg";
     }
 
     if (!data.product.nova_group) {
-        novaScore.src = "../img/nova-na.svg";
+        novaScore.src = "/img/nova-na.svg";
     } else if (!isNaN(data.product.nova_group)) {
-        novaScore.src = "../img/nova-" + data.product.nova_group + ".svg";
+        novaScore.src = "/img/nova-" + data.product.nova_group + ".svg";
     } else {
-        novaScore.src = "../img/nova-na.svg";
+        novaScore.src = "/img/nova-na.svg";
     }
 }
 
@@ -197,13 +196,13 @@ function getAnalysis(data) {
             case "en:palm-oil":
                 palmOilLabel.setAttribute("class", "red-ingredients-label");
                 palmOilLabel.innerHTML =
-                    "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Huile de palme";
+                    "<img src='/img/palm.svg' alt='icon-palm-oil'>&nbsp;Huile de palme";
                 productAnalysis.appendChild(palmOilLabel);
                 break;
             case "en:palm-oil-free":
                 palmOilLabel.setAttribute("class", "green-ingredients-label");
                 palmOilLabel.innerHTML =
-                    "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Sans huile de palme";
+                    "<img src='/img/palm.svg' alt='icon-palm-oil'>&nbsp;Sans huile de palme";
                 productAnalysis.appendChild(palmOilLabel);
                 break;
             case "en:palm-oil-content-unknown":
@@ -221,13 +220,13 @@ function getAnalysis(data) {
             case "en:non-vegan":
                 veganLabel.setAttribute("class", "red-ingredients-label");
                 veganLabel.innerHTML =
-                    "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
+                    "<img src='/img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
                 productAnalysis.appendChild(veganLabel);
                 break;
             case "en:vegan":
                 veganLabel.setAttribute("class", "green-ingredients-label");
                 veganLabel.innerHTML =
-                    "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
+                    "<img src='/img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
                 productAnalysis.appendChild(veganLabel);
                 break;
             case "en:vegan-status-unknown":
@@ -244,7 +243,7 @@ function getAnalysis(data) {
             case "en:non-vegetarian":
                 vegatarianLabel.setAttribute("class", "red-ingredients-label");
                 vegatarianLabel.innerHTML =
-                    "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
+                    "<img src='/img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
                 productAnalysis.appendChild(vegatarianLabel);
                 break;
             case "en:vegetarian":
@@ -253,7 +252,7 @@ function getAnalysis(data) {
                     "green-ingredients-label"
                 );
                 vegatarianLabel.innerHTML =
-                    "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
+                    "<img src='/img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
                 productAnalysis.appendChild(vegatarianLabel);
                 break;
             case "en:vegetarian-status-unknown":

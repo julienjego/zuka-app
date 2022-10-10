@@ -29,27 +29,27 @@ export function getScores(data: ProductData) {
     let novascoreSrc: string;
 
     if (!scores.ecoscore) {
-        ecoscoreSrc = "../img/ecoscore-na.svg";
+        ecoscoreSrc = "/img/ecoscore-na.svg";
     } else if (scores.ecoscore.match(/^[a-e]$/)) {
-        ecoscoreSrc = "../img/ecoscore-" + scores.ecoscore + ".svg";
+        ecoscoreSrc = "/img/ecoscore-" + scores.ecoscore + ".svg";
     } else {
-        ecoscoreSrc = "../img/ecoscore-na.svg";
+        ecoscoreSrc = "/img/ecoscore-na.svg";
     }
 
     if (!scores.nutriscore) {
-        nutricoreSrc = "../img/nutriscore-na.svg";
+        nutricoreSrc = "/img/nutriscore-na.svg";
     } else if (scores.nutriscore.match(/^[a-e]$/)) {
-        nutricoreSrc = "../img/nutriscore-" + scores.nutriscore + ".svg";
+        nutricoreSrc = "/img/nutriscore-" + scores.nutriscore + ".svg";
     } else {
-        nutricoreSrc = "../img/nutri-na.svg";
+        nutricoreSrc = "/img/nutri-na.svg";
     }
 
     if (!scores.novascore) {
-        novascoreSrc = "../img/nova-na.svg";
+        novascoreSrc = "/img/nova-na.svg";
     } else if (!isNaN(scores.novascore)) {
-        novascoreSrc = "../img/nova-" + scores.novascore + ".svg";
+        novascoreSrc = "/img/nova-" + scores.novascore + ".svg";
     } else {
-        novascoreSrc = "../img/nova-na.svg";
+        novascoreSrc = "/img/nova-na.svg";
     }
 
     nutriScore.src = nutricoreSrc;

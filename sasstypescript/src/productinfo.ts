@@ -69,7 +69,7 @@ export function getProductInfo(data: ProductData) {
         ? "Aucune valeur"
         : cat.toString().replaceAll("en:", "");
 
-    productImg.src = !product.image ? "../img/placeholder.png" : product.image;
+    productImg.src = !product.image ? "/img/placeholder.png" : product.image;
 
     bioLbl.style.display =
         product.bio && product.bio.includes("Bio") ? "inline-block" : "none";

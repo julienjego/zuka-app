@@ -86,12 +86,12 @@ function isPalmOil(s: string): void {
     if (s === "true") {
         palmOilLabel.setAttribute("class", "red-ingredients-label");
         palmOilLabel.innerHTML =
-            "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Huile de palme";
+            "<img src='/img/palm.svg' alt='icon-palm-oil'>&nbsp;Huile de palme";
         productAnalysisEl.appendChild(palmOilLabel);
     } else if (s === "false") {
         palmOilLabel.setAttribute("class", "green-ingredients-label");
         palmOilLabel.innerHTML =
-            "<img src='../img/palm.svg' alt='icon-palm-oil'>&nbsp;Sans huile de palme";
+            "<img src='/img/palm.svg' alt='icon-palm-oil'>&nbsp;Sans huile de palme";
         productAnalysisEl.appendChild(palmOilLabel);
     } else {
         palmOilLabel.setAttribute("class", "unknown-ingredients-label");
@@ -104,12 +104,12 @@ function isVegan(s: string): void {
     if (s === "true") {
         veganLabel.setAttribute("class", "green-ingredients-label");
         veganLabel.innerHTML =
-            "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
+            "<img src='/img/vegan.svg' alt='icon-vegan'>&nbsp;Vegan";
         productAnalysisEl.appendChild(veganLabel);
     } else if (s === "false") {
         veganLabel.setAttribute("class", "red-ingredients-label");
         veganLabel.innerHTML =
-            "<img src='../img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
+            "<img src='/img/vegan.svg' alt='icon-vegan'>&nbsp;Non vegan";
         productAnalysisEl.appendChild(veganLabel);
     } else {
         veganLabel.setAttribute("class", "unknown-ingredients-label");
@@ -122,12 +122,12 @@ function isVegetarian(s: string): void {
     if (s === "true") {
         vegatarianLabel.setAttribute("class", "green-ingredients-label");
         vegatarianLabel.innerHTML =
-            "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
+            "<img src='/img/vege.svg' alt='icon-vegetarian'>&nbsp;Végétarien";
         productAnalysisEl.appendChild(vegatarianLabel);
     } else if (s === "false") {
         vegatarianLabel.setAttribute("class", "red-ingredients-label");
         vegatarianLabel.innerHTML =
-            "<img src='../img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
+            "<img src='/img/vege.svg' alt='icon-vegetarian'>&nbsp;Non végétarien";
         productAnalysisEl.appendChild(vegatarianLabel);
     } else {
         vegatarianLabel.setAttribute("class", "unknown-ingredients-label");

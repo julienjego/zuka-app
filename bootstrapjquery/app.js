@@ -88,7 +88,7 @@ $(document).ready(function () {
     // On effectue la requête avec l'url du random ou la recherche classique ou le scan
     function fetchIt(url) {
         const loader = $(
-            "<img src='../img/loader.gif' alt='chargement' class='d-block mx-auto'>"
+            "<img src='/img/loader.gif' alt='chargement' class='d-block mx-auto'>"
         ).appendTo($("#error-panel"));
         $.getJSON(url)
             .done((data) => {
@@ -147,7 +147,7 @@ $(document).ready(function () {
         productImg.attr(
             "src",
             !data.product.image_front_url
-                ? "../img/placeholder.png"
+                ? "/img/placeholder.png"
                 : data.product.image_front_url
         );
 
@@ -166,36 +166,36 @@ $(document).ready(function () {
         const novaScore = $("#novascore");
 
         if (!data.product.ecoscore_grade) {
-            ecoScore.attr("src", "../img/ecoscore-na.svg");
+            ecoScore.attr("src", "/img/ecoscore-na.svg");
         } else if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
             ecoScore.attr(
                 "src",
-                "../img/ecoscore-" + data.product.ecoscore_grade + ".svg"
+                "/img/ecoscore-" + data.product.ecoscore_grade + ".svg"
             );
         } else {
-            ecoScore.attr("src", "../img/ecoscore-na.svg");
+            ecoScore.attr("src", "/img/ecoscore-na.svg");
         }
 
         if (!data.product.nutriscore_grade) {
-            nutriScore.attr("src", "../img/nutriscore-na.svg");
+            nutriScore.attr("src", "/img/nutriscore-na.svg");
         } else if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
             nutriScore.attr(
                 "src",
-                "../img/nutriscore-" + data.product.nutriscore_grade + ".svg"
+                "/img/nutriscore-" + data.product.nutriscore_grade + ".svg"
             );
         } else {
-            nutriScore.attr("src", "../img/nutriscore-na.svg");
+            nutriScore.attr("src", "/img/nutriscore-na.svg");
         }
 
         if (!data.product.nova_group) {
-            novaScore.attr("src", "../img/nova-na.svg");
+            novaScore.attr("src", "/img/nova-na.svg");
         } else if (!isNaN(data.product.nova_group)) {
             novaScore.attr(
                 "src",
-                "../img/nova-" + data.product.nova_group + ".svg"
+                "/img/nova-" + data.product.nova_group + ".svg"
             );
         } else {
-            novaScore.attr("src", "../img/nova-na.svg");
+            novaScore.attr("src", "/img/nova-na.svg");
         }
     }
 
@@ -236,7 +236,7 @@ $(document).ready(function () {
             data.product.additives_original_tags.forEach((additive) => {
                 let add = additive.replace("en:", "").toUpperCase();
 
-                $.getJSON("../json/additives.json", (data) => {
+                $.getJSON("/json/additives.json", (data) => {
                     for (let d of data) {
                         if (d.additif == add) {
                             add += ` (${d.description})`;
