@@ -16,10 +16,7 @@ export function getAnalysis(data) {
         productAnalysisEl.innerHTML = "Rien à afficher ici...";
     }
     else {
-        let palmoil = "";
-        let vegan = "";
-        let vegetarian = "";
-        const productAnalysis = new ProductAnalysis(palmoil, vegan, vegetarian);
+        const productAnalysis = new ProductAnalysis("", "", "");
         // Labels huile de palme
         switch (data.product.ingredients_analysis_tags[0]) {
             case "en:palm-oil":
