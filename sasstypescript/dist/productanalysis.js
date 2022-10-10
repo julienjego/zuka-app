@@ -6,12 +6,12 @@ class ProductAnalysis {
     }
 }
 const productAnalysisEl = (document.querySelector("#analysis-labels"));
-productAnalysisEl.innerHTML = "";
 let palmOilLabel = document.createElement("div");
 let veganLabel = document.createElement("div");
 let vegatarianLabel = document.createElement("div");
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
 export function getAnalysis(data) {
+    productAnalysisEl.innerHTML = "";
     if (!data.product.ingredients_analysis_tags) {
         productAnalysisEl.innerHTML = "Rien à afficher ici...";
     }

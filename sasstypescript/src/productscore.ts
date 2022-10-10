@@ -1,3 +1,5 @@
+import { ProductData } from "./productdataype";
+
 class ProductScores {
     nutriscore: string;
     novascore: number;
@@ -11,7 +13,7 @@ class ProductScores {
 }
 
 // On récupère les scores et on affiche les bonnes images
-export function getScores(data: any) {
+export function getScores(data: ProductData) {
     const scores = new ProductScores(
         data.product.nutriscore_grade,
         data.product.nova_group,

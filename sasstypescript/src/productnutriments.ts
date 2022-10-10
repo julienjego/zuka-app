@@ -1,3 +1,5 @@
+import { ProductData } from "./productdataype";
+
 class ProductNutriments {
     energy: number;
     fat: number;
@@ -21,7 +23,7 @@ class ProductNutriments {
 }
 
 // On récupère les infos pour le tableau "Repères nutritionnels"
-export function getNutriments(data: any) {
+export function getNutriments(data: ProductData) {
     const nbFormat = new Intl.NumberFormat("fr-FR");
 
     const nutriEnergy = <HTMLDivElement>document.querySelector("#energy");
@@ -74,7 +76,6 @@ export function getNutriments(data: any) {
             : nbFormat.format(productNutriments.salt) +
               " g " +
               getNutrimentLevel(data, "salt");
-        console.log(productNutriments);
     }
 }
 

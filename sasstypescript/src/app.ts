@@ -1,3 +1,4 @@
+import { ProductData } from "./productdataype.js";
 import { getProductInfo } from "./productinfo.js";
 import { getScores } from "./productscore.js";
 import { getAllIngredients } from "./productingredient.js";
@@ -53,7 +54,7 @@ function doSearch() {
 async function fetchIt(url: string) {
     const alertBox = <HTMLDivElement>document.querySelector("#alert-box");
     const response: Response = await fetch(url);
-    const data: Response = await response.json();
+    const data: ProductData = await response.json();
 
     if (data.status === 0) {
         alertBox.style.display = "block";

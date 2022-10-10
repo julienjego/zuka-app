@@ -1,3 +1,5 @@
+import { ProductData } from "./productdataype";
+
 class IngredientsList {
     ingredients: string;
     allergens: string;
@@ -14,7 +16,7 @@ class IngredientsList {
     }
 }
 
-export function getAllIngredients(data: any) {
+export function getAllIngredients(data: ProductData) {
     // On récupère la liste des ingrédients, trois cas pour être sûr d'obtenir quelque chose
     const productIngredients = <HTMLParagraphElement>(
         document.querySelector("#list-ingredients")

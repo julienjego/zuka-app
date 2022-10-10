@@ -1,3 +1,5 @@
+import { ProductData } from "./productdataype";
+
 class ProductInfo {
     name: string;
     brand: string;
@@ -24,7 +26,16 @@ class ProductInfo {
 }
 
 // On récupère les infos  pour la section "Le produit"
-export function getProductInfo(data: any) {
+export function getProductInfo(data: ProductData) {
+    const product = new ProductInfo(
+        data.product.product_name,
+        data.product.brands,
+        data.product.quantity,
+        data.product.categories,
+        data.product.image_front_url,
+        data.product.labels
+    );
+
     const productLbl = <HTMLParagraphElement>(
         document.querySelector("#product-name")
     );
@@ -40,39 +51,26 @@ export function getProductInfo(data: any) {
     const productImg = <HTMLImageElement>document.querySelector("#product-img");
     const bioLbl = <HTMLSpanElement>document.querySelector("#bio-label");
 
-    const name: string = !data.product.product_name
+    productLbl.innerHTML = !product.name
         ? "<strong>Aucun nom</strong>"
-        : `<strong>${data.product.product_name}</strong>`;
+        : `<strong>${product.name}</strong>`;
 
-    const qty: string = !data.product.quantity
+    productQty.innerHTML = !product.quantity
         ? "Aucune valeur"
-        : data.product.quantity;
+        : product.quantity;
 
-    const brand: string = !data.product.brands
+    productBrand.innerHTML = !product.brand
         ? "Aucune valeur"
-        : data.product.brands.replaceAll(",", ", ");
+        : product.brand.replaceAll(",", ", ");
 
-    const cat: string = !data.product.categories
+    const cat: string[] = product.category.match(/[^,.\s][^,\d]*$/)!;
+
+    productCat.innerHTML = !product.category
         ? "Aucune valeur"
-        : data.product.categories
-              .replaceAll("en:", "")
-              .match(/[^,.\s][^,\d]*$/);
+        : cat.toString().replaceAll("en:", "");
 
-    const img: string = !data.product.image_front_url
-        ? "../img/placeholder.png"
-        : data.product.image_front_url;
+    productImg.src = !product.image ? "../img/placeholder.png" : product.image;
 
-    const bio: string =
-        data.product.labels && data.product.labels.includes("Bio")
-            ? "inline-block"
-            : "none";
-
-    const product = new ProductInfo(name, brand, qty, cat, img, bio);
-
-    productLbl.innerHTML = product.name;
-    productQty.innerHTML = product.quantity;
-    productBrand.innerHTML = product.brand;
-    productCat.innerHTML = product.category;
-    productImg.src = product.image;
-    bioLbl.style.display = product.bio;
+    bioLbl.style.display =
+        product.bio && product.bio.includes("Bio") ? "inline-block" : "none";
 }

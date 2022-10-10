@@ -1,3 +1,5 @@
+import { ProductData } from "./productdataype";
+
 class ProductAnalysis {
     palmoil: string;
     vegan: string;
@@ -14,14 +16,13 @@ const productAnalysisEl = <HTMLDivElement>(
     document.querySelector("#analysis-labels")
 );
 
-productAnalysisEl.innerHTML = "";
-
 let palmOilLabel = document.createElement("div");
 let veganLabel = document.createElement("div");
 let vegatarianLabel = document.createElement("div");
 
 // On récupère les infos sur le statut "huile de palme", "vegan" et "végé" et on affiche les bons labels
-export function getAnalysis(data: any) {
+export function getAnalysis(data: ProductData) {
+    productAnalysisEl.innerHTML = "";
     if (!data.product.ingredients_analysis_tags) {
         productAnalysisEl.innerHTML = "Rien à afficher ici...";
     } else {

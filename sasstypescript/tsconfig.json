@@ -5,7 +5,7 @@
         "rootDir": "src",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "target": "ES2017",
+        "target": "ES2021",
         "noEmitOnError": true
     }
 }
