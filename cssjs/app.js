@@ -102,30 +102,17 @@ function getScores(data) {
     const nutriScore = document.querySelector("#nutriscore");
     const novaScore = document.querySelector("#novascore");
 
-    if (!data.product.ecoscore_grade) {
-        ecoScore.src = "/img/ecoscore-na.svg";
-    } else if (data.product.ecoscore_grade.match(/^[a-e]$/)) {
-        ecoScore.src = "/img/ecoscore-" + data.product.ecoscore_grade + ".svg";
-    } else {
-        ecoScore.src = "/img/ecoscore-na.svg";
-    }
+    ecoScore.src = data.product.ecoscore_grade.match(/^[a-e]$/)
+        ? "/img/ecoscore-" + data.product.ecoscore_grade + ".svg"
+        : "/img/ecoscore-na.svg";
 
-    if (!data.product.nutriscore_grade) {
-        nutriScore.src = "/img/nutriscore-na.svg";
-    } else if (data.product.nutriscore_grade.match(/^[a-e]$/)) {
-        nutriScore.src =
-            "/img/nutriscore-" + data.product.nutriscore_grade + ".svg";
-    } else {
-        nutriScore.src = "/img/nutriscore-na.svg";
-    }
+    nutriScore.src = data.product.nutriscore_grade.match(/^[a-e]$/)
+        ? "/img/nutriscore-" + data.product.nutriscore_grade + ".svg"
+        : "/img/nutriscore-na.svg";
 
-    if (!data.product.nova_group) {
-        novaScore.src = "/img/nova-na.svg";
-    } else if (!isNaN(data.product.nova_group)) {
-        novaScore.src = "/img/nova-" + data.product.nova_group + ".svg";
-    } else {
-        novaScore.src = "/img/nova-na.svg";
-    }
+    novaScore.src = !isNaN(data.product.nova_group)
+        ? "/img/nova-" + data.product.nova_group + ".svg"
+        : "/img/nova-na.svg";
 }
 
 // On récupère la liste des ingrédients, trois cas pour être sûr d'obtenir quelque chose
