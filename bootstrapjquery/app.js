@@ -94,6 +94,7 @@ $(document).ready(function () {
             .done((data) => {
                 if (data.status === 0) {
                     $("#alert-box").css("display", "block");
+                    $("#alert-scan").css("display", "none");
                 } else {
                     $("#alert-box").css("display", "none");
                     $("#alert-scan").css("display", "none");
